@@ -7,6 +7,10 @@ public class spawningBlood : MonoBehaviour
     public GameObject bloodPrefab;
     public int bloodDropChance = 100;
     public int bloodDestructionTime;
+    private PlayerEvade ev;
+    void Start(){
+        ev = FindObjectOfType<PlayerEvade>();
+    }
 
     public void SpawnBloodAt(Vector3 enemyPosition)
     {
@@ -27,7 +31,7 @@ public class spawningBlood : MonoBehaviour
     {   
         Debug.Log("Wait for " + bloodDestructionTime + " seconds to destroy blood");
         yield return new WaitForSeconds(bloodDestructionTime);
-        if(spawnedBlood != null)
+        if(spawnedBlood != null && ev.enabled == true)
         {
             Destroy(spawnedBlood);
         }

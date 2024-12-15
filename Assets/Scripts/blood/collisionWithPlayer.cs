@@ -23,7 +23,7 @@ public class collisionWithPlayer : MonoBehaviour
             {
                 Debug.Log("Player in blood");
                 StartCoroutine(stopScript.moveBlock());
-                countScript.addBlood();
+                countScript.bloodLogic();
             }
 
         }

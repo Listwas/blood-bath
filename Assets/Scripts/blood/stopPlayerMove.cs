@@ -15,7 +15,6 @@ public class stopPlayerMove : MonoBehaviour
 
     public IEnumerator moveBlock()
     {
-        Debug.Log("IE");
         if(evade != null & move != null)
         {
             yield return new WaitForSeconds(blockMovementDelay);

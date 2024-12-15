@@ -35,9 +35,13 @@ public class ComboSystem : MonoBehaviour
 
     private Dictionary<string, (DamageType damageType, int damage)> comboDictionary;
 
+    //zwiększanie dmg z combo
+    private bloodCount blood;
+
     void Start()
     {
         InitializeComboDictionary();
+        blood = FindObjectOfType<bloodCount>();
     }
 
     private void InitializeComboDictionary() {
@@ -83,9 +87,9 @@ public class ComboSystem : MonoBehaviour
             if (comboDictionary.TryGetValue(comboKey, out var comboData))
             {
                 if (comboMatchedDebug) {
-                    Debug.Log($"combo matched: {comboKey}, DamageType: {comboData.damageType}, Damage: {comboData.damage}");
+                    Debug.Log($"combo matched: {comboKey}, DamageType: {comboData.damageType}, Damage: {(int)(comboData.damage * blood.DMGMulti)}");
                 }
-                OnComboExecuted?.Invoke(comboData.damageType, comboData.damage);
+                OnComboExecuted?.Invoke(comboData.damageType, (int)(comboData.damage * blood.DMGMulti));
             }
             else
             {
