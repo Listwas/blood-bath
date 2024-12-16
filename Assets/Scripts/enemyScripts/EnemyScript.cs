@@ -18,12 +18,15 @@ public class EnemyScript : MonoBehaviour
     private float nextShootTime;
 
     public spawningBlood blood;
+    public FloatingHealthBar healthBar;
 
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         blood = FindObjectOfType<spawningBlood>();
+        healthBar.DoHealthBar(maxHealth, maxHealth); 
     }
 
     void Update()
@@ -83,6 +86,7 @@ public class EnemyScript : MonoBehaviour
     {
         currentHealth -= damage;
         // Debug.Log("enemy took " + damage + " damage. Current health: " + currentHealth);
+        healthBar.DoHealthBar(currentHealth, maxHealth);
 
         if (currentHealth <= 0) {
             Die();
