@@ -24,6 +24,8 @@ public class CombatScript : MonoBehaviour
     public bool takenDamageDebug;    
     private bool has_died = false;   
 
+    private FloatingHealthBar healthBar;
+
     [Header("Debug Log Enabler")]
     public bool lightAttackDebug;
     public bool heavyAttackDebug;
@@ -37,6 +39,8 @@ public class CombatScript : MonoBehaviour
     {
         comboSystem = GetComponent<ComboSystem>();
         comboSystem.OnComboExecuted += ExecuteComboEffect;
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
+        healthBar.DoHealthBar(current_health, max_health); 
     }
 
     public void ProcessPlayerInput()
@@ -116,11 +120,13 @@ public class CombatScript : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         current_health -= damageAmount;
+        healthBar.DoHealthBar(current_health, max_health); 
 
         if (current_health > 0)
         {
             if (takenDamageDebug)
             {
+                
                 Debug.Log("Player took " + damageAmount + " damage. Current health: " + current_health);
             }
         }
