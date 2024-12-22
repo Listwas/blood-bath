@@ -42,6 +42,9 @@ public class CombatScript : MonoBehaviour
         healthBar = GetComponentInChildren<FloatingHealthBar>();
         healthBar.DoHealthBar(current_health, max_health); 
     }
+    void Update(){
+        healthBar.DoHealthBar(current_health, max_health); 
+    }
 
     public void ProcessPlayerInput()
     {
@@ -120,7 +123,6 @@ public class CombatScript : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         current_health -= damageAmount;
-        healthBar.DoHealthBar(current_health, max_health); 
 
         if (current_health > 0)
         {
