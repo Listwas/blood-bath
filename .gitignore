@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 
 .vscode
+# Articy Plugin
+# =====================================
+Assets/ArticyImporter/Content/Generated/
