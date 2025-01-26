@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CombatScript : MonoBehaviour
@@ -34,12 +35,16 @@ public class CombatScript : MonoBehaviour
 
     private float last_light_attack_time;
     private float last_heavy_attack_time;
+    private bloodCount blood;
+
+    
 
     private void Start()
     {
         comboSystem = GetComponent<ComboSystem>();
         comboSystem.OnComboExecuted += ExecuteComboEffect;
         healthBar = GetComponentInChildren<FloatingHealthBar>();
+        blood = FindObjectOfType<bloodCount>();
         healthBar.DoHealthBar(current_health, max_health); 
     }
     void Update(){
@@ -79,24 +84,23 @@ public class CombatScript : MonoBehaviour
     private void ExecuteLightAttack()
     {
         comboSystem.RegisterAttack(ComboSystem.AttackType.Light);
-        bool hitEnemy = ApplyAttackDamage(light_attack_damage, light_attack_range);
+        bool hitEnemy = ApplyAttackDamage((int)(light_attack_damage * blood.DMGMulti), light_attack_range);
         animator.SetTrigger("fast attack");
-
         if (lightAttackDebug)
         {
-            Debug.Log($"Light Attack: Damage={light_attack_damage}, Cooldown={light_attack_cooldown}s, Hit={(hitEnemy ? "enemy" : "nothing")}");
+            Debug.Log($"Light Attack: Damage={light_attack_damage * blood.DMGMulti}, Cooldown={light_attack_cooldown}s, Hit={(hitEnemy ? "enemy" : "nothing")}");
         }
     }
 
     private void ExecuteHeavyAttack()
     {
         comboSystem.RegisterAttack(ComboSystem.AttackType.Heavy);
-        bool hitEnemy = ApplyAttackDamage(heavy_attack_damage, heavy_attack_range);
+        bool hitEnemy = ApplyAttackDamage((int)(heavy_attack_damage * blood.DMGMulti), heavy_attack_range);
         animator.SetTrigger("heavy attack");
 
         if (heavyAttackDebug)
         {
-            Debug.Log($"Heavy Attack: Damage={heavy_attack_damage}, Cooldown={heavy_attack_cooldown}s, Hit={(hitEnemy ? "enemy" : "nothing")}");
+            Debug.Log($"Heavy Attack: Damage={heavy_attack_damage * blood.DMGMulti}, Cooldown={heavy_attack_cooldown}s, Hit={(hitEnemy ? "enemy" : "nothing")}");
         }
     }
 
@@ -140,6 +144,24 @@ public class CombatScript : MonoBehaviour
                 Debug.Log("Player died!");
             }
         }
+    }
+
+    public void HealingOneTime(int healAmount){
+        current_health += healAmount;
+        if(current_health > max_health){
+            current_health = max_health;
+        }
+    }
+    public IEnumerator timedHealing(int healAmount){
+        for(int i = 1; i <= 5; i++){
+            current_health += healAmount;
+            
+            if(current_health > max_health){
+                current_health = max_health;
+            }
+            yield return new WaitForSeconds(3);
+        }
+
     }
 
     private void OnDrawGizmos()
