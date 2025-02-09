@@ -13,6 +13,12 @@ public class BulletScript : MonoBehaviour
             CombatScript playerCombat = other.GetComponent<CombatScript>();
             if (playerCombat != null)
             {
+                if (playerCombat.is_parrying)
+                {
+                    Debug.Log("Bullet parried! No damage taken.");
+                    Destroy(gameObject);
+                    return;
+                }
                 playerCombat.TakeDamage(bulletDamage);
             }
 

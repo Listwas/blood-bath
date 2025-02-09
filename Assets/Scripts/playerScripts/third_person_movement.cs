@@ -25,7 +25,6 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
         current_health = max_health;
-
         combatScript = GetComponent<CombatScript>();
     }
 
