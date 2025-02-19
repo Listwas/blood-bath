@@ -2208,6 +2208,53 @@ MonoBehaviour:
         icon: {fileID: 0}
         condition: 
       line: "B\u0119d\u0119 w ukryciu, na wypadek kolejnego ataku."
+  - dialogueLines:
+    - character:
+        name: Lyssandra
+        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
+        condition: 
+      line: "S\u0142uchamy Ci\u0119 Meekku.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Nasza tr\xF3jka to za ma\u0142o, aby zdoby\u0107 gr\xF3d.\r\n\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Ich ostrok\xF3\u0142 pokonamy tylko w jeden spos\xF3b.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: 'Ogniem.
+
+'
+    - character:
+        name: Anaman
+        icon: {fileID: 0}
+        condition: 
+      line: "My druidzi, nie u\u017Cywamy tak barbarzy\u0144skiej magii, to wbrew
+        naturze.\r\n"
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+        condition: 
+      line: "Dzi\u015B nagniemy zasady. Ze\u015Bl\u0119 burz\u0119.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Skierujcie ca\u0142y sw\xF3j gniew na ludzi, a mo\u017Ce nam si\u0119
+        uda. Ja zrobi\u0119 reszte.\r\n"
+    - character:
+        name: Anaman
+        icon: {fileID: 0}
+        condition: 
+      line: 'Wierzymy w Ciebie, Meekku
+
+'
   availableConditions:
   - conditionName: 
     conditionBool: 0
@@ -3100,6 +3147,7 @@ Transform:
   - {fileID: 926564914}
   - {fileID: 1094798513}
   - {fileID: 1614246825}
+  - {fileID: 1662515249}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263802825
@@ -16137,6 +16185,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4151225218368634, guid: e409369781974684095924fc5a1fce2e, type: 3}
   m_PrefabInstance: {fileID: 1658064309}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1662515248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662515249}
+  - component: {fileID: 1662515252}
+  - component: {fileID: 1662515251}
+  - component: {fileID: 1662515250}
+  m_Layer: 0
+  m_Name: "Dialog po doj\u015Bciu pod Gr\xF3d Brzozowa"
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1662515249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662515248}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
+  m_LocalPosition: {x: 66.1, y: -77.9, z: -104.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1742130340}
+  m_Father: {fileID: 245729957}
+  m_LocalEulerAnglesHint: {x: 0.405, y: 180.017, z: -0.47}
+--- !u!136 &1662515250
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662515248}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1662515251
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662515248}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1662515252
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662515248}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!43 &1671419748
 Mesh:
   m_ObjectHideFlags: 0
@@ -17195,6 +17351,141 @@ Transform:
   m_Children: []
   m_Father: {fileID: 24867984}
   m_LocalEulerAnglesHint: {x: 0.017, y: 0.439, z: 87.735}
+--- !u!1 &1742130339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742130340}
+  - component: {fileID: 1742130344}
+  - component: {fileID: 1742130343}
+  - component: {fileID: 1742130342}
+  - component: {fileID: 1742130341}
+  m_Layer: 0
+  m_Name: Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742130340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742130339}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.98, z: 0}
+  m_LocalScale: {x: 4.9739, y: 0.06015635, z: 4.9739}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1662515249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1742130341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742130339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65886cf9fa165da4aa78de7dfc3ffc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableDialogues:
+  - dialogueLines:
+    - character:
+        name: Anaman
+        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
+        condition: 
+      line: "Wytrzymaj jeszcze chwil\u0119!\r\n"
+    - character:
+        name: Anaman
+        icon: {fileID: 0}
+        condition: 
+      line: "Uwa\u017Caj na wiry magii!\r\n"
+  availableConditions:
+  - conditionName: 
+    conditionBool: 0
+--- !u!136 &1742130342
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742130339}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1742130343
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742130339}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1742130344
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742130339}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1762115701
 PrefabInstance:
   m_ObjectHideFlags: 0
