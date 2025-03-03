@@ -91,15 +91,6 @@ public class CombatScript : MonoBehaviour
         Debug.Log("Player started parrying!");
     }
 
-    private void Update()
-    {
-        if (is_parrying && Time.time > parry_end_time)
-        {
-            is_parrying = false;
-            Debug.Log("Player stopped parrying.");
-        }
-    }
-
     private void ExecuteComboEffect(ComboSystem.DamageType damageType, int totalDamage)
     {
         if (comboExecutedDebug)
