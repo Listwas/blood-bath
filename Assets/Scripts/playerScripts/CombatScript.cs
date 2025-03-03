@@ -23,7 +23,13 @@ public class CombatScript : MonoBehaviour
     public int current_health = 100; 
     public int max_health = 100;     
     public bool takenDamageDebug;    
-    private bool has_died = false;   
+    private bool has_died = false;
+
+    [Header("Parry Settings")]
+    public bool is_parrying = false;
+    public float parry_duration = 0.5f;
+    private float parry_end_time;
+    public float parry_range = 1.5f;
 
     private FloatingHealthBar healthBar;
 
@@ -32,6 +38,7 @@ public class CombatScript : MonoBehaviour
     public bool heavyAttackDebug;
     public bool comboExecutedDebug;
     public bool showAttackRange;
+    public bool showParryRange;
 
     private float last_light_attack_time;
     private float last_heavy_attack_time;
@@ -68,6 +75,28 @@ public class CombatScript : MonoBehaviour
                 ExecuteHeavyAttack();
                 last_heavy_attack_time = Time.time;
             }
+        }
+
+        if (Input.GetButtonDown("Parry") || Input.GetKeyDown(KeyCode.F))
+        {
+            StartParry();
+        }
+    }
+
+    private void StartParry()
+    {
+        is_parrying = true;
+        parry_end_time = Time.time + parry_duration;
+        animator.SetTrigger("parry");
+        Debug.Log("Player started parrying!");
+    }
+
+    private void Update()
+    {
+        if (is_parrying && Time.time > parry_end_time)
+        {
+            is_parrying = false;
+            Debug.Log("Player stopped parrying.");
         }
     }
 
@@ -126,6 +155,12 @@ public class CombatScript : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        if (is_parrying)
+        {
+            Debug.Log("Parry successful! No damage taken.");
+            return;
+        }
+        
         current_health -= damageAmount;
 
         if (current_health > 0)
@@ -173,6 +208,12 @@ public class CombatScript : MonoBehaviour
 
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position + transform.forward, heavy_attack_range);
+        }
+        
+        if (showParryRange)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, parry_range);
         }
     }
 }

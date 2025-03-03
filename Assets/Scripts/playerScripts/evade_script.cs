@@ -15,12 +15,11 @@ public class PlayerEvade : MonoBehaviour
     void Update()
     {
         check_for_evade_input();
-        reset_evade_state_if_necessary();
     }
 
     private void check_for_evade_input()
     {
-        if (Input.GetButtonDown("EvadeButton") || Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetButtonDown("EvadeButton") || Input.GetKeyDown(KeyCode.Space)) && Time.time >= next_evade_allowed_time)
         {
             if (!is_evading_in_progress)
             {
@@ -57,13 +56,5 @@ public class PlayerEvade : MonoBehaviour
         next_evade_allowed_time = Time.time + evade_cooldown;
         Debug.Log("Evade completed. Cooldown starts.");
         is_evading_in_progress = false;
-    }
-
-    private void reset_evade_state_if_necessary()
-    {
-        if (is_evading_in_progress && Time.time > next_evade_allowed_time)
-        {
-            is_evading_in_progress = false;
-        }
     }
 }
