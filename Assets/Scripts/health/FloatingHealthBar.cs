@@ -20,5 +20,4 @@ public class FloatingHealthBar : MonoBehaviour
         slider.value = currentValue / maxValue;
         healthText.text = currentValue.ToString() + "/" + maxValue.ToString();
     }
-
 }

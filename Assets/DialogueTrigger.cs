@@ -10,10 +10,9 @@ public class DialogueCharacter
     public Sprite icon;
 
     public string condition;
-    //char sound
-    
+    // char sound
 }
- 
+
 [System.Serializable]
 public class DialogueLine
 {
@@ -21,44 +20,41 @@ public class DialogueLine
     [TextArea(3, 10)]
     public string line;
 }
- 
+
 [System.Serializable]
 public class Dialogue
 {
-    //public string dialogueName;
-    //dialog condition?
-    
+    // public string dialogueName;
+    // dialog condition?
+
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
 }
 [System.Serializable]
- public class Conditions{
+public class Conditions
+{
     public string conditionName;
     public bool conditionBool;
- }
+}
 public class DialogueTrigger : MonoBehaviour
 {
     public List<Dialogue> availableDialogues;
-    public List<Conditions> availableConditions; 
-    
-    
- 
+    public List<Conditions> availableConditions;
+
     public void TriggerDialogue()
     {
-        Dialogue selectedDialogue = availableDialogues[UnityEngine.Random.Range(0, availableDialogues.Count)];
+        Dialogue selectedDialogue =
+          availableDialogues[UnityEngine.Random.Range(0, availableDialogues.Count)];
 
-        
         DialogueManager.Instance.StartDialogue(selectedDialogue);
     }
- 
+
     private void OnTriggerEnter(Collider collision)
     {
         // jak wedziemy w trigger to wł ikonke nad npc
         if (collision is BoxCollider)
-        //and if f 
-            {TriggerDialogue();}
-            
-        
+        // and if f
+        {
+            TriggerDialogue();
+        }
     }
-
-    
 }

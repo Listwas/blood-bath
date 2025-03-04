@@ -1,17 +1,16 @@
 using System.Collections;
-
 using UnityEngine;
 
 public class collisionWithPlayer : MonoBehaviour
 {
     private stopPlayerMove stopScript;
-    private bloodCount countScript;
+    private BloodCount countScript;
 
 
     void Start()
     {
         stopScript = FindObjectOfType<stopPlayerMove>();
-        countScript = FindObjectOfType<bloodCount>();
+        countScript = FindObjectOfType<BloodCount>();
     }
 
     public void OnTriggerEnter(Collider collision)

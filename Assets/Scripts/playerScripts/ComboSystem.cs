@@ -6,8 +6,8 @@ public class Combo
 {
     // combo pattern: damage type, total damage.
     public string comboPattern;
-    public ComboSystem.DamageType damageType; 
-    public int damage; 
+    public ComboSystem.DamageType damageType;
+    public int damage;
 }
 
 public class ComboSystem : MonoBehaviour
@@ -17,9 +17,16 @@ public class ComboSystem : MonoBehaviour
     public bool comboTimeoutDebug;
     public bool noticeAttackDebug;
     // damage types
-    public enum AttackType { Light, Heavy }
-    public enum DamageType { Blunt, Slash }
-
+    public enum AttackType
+    {
+        Light,
+        Heavy
+    }
+    public enum DamageType
+    {
+        Blunt,
+        Slash
+    }
 
     [Header("Combo Configurations")]
     public List<Combo> combos = new List<Combo>();
@@ -35,64 +42,63 @@ public class ComboSystem : MonoBehaviour
 
     private Dictionary<string, (DamageType damageType, int damage)> comboDictionary;
 
-    //zwiększanie dmg z combo
-    private bloodCount blood;
+    // zwiększanie dmg z combo
+    private BloodCount blood;
 
     void Start()
     {
         InitializeComboDictionary();
-        blood = FindObjectOfType<bloodCount>();
+        blood = FindObjectOfType<BloodCount>();
     }
 
-    private void InitializeComboDictionary() {
+    private void InitializeComboDictionary()
+    {
 
         // convert the list of combos into dictionary
         comboDictionary = new Dictionary<string, (DamageType, int)>();
-        foreach (var combo in combos)
-        {
-            if (!string.IsNullOrWhiteSpace(combo.comboPattern))
-            {
+        foreach (var combo in combos) {
+            if (!string.IsNullOrWhiteSpace(combo.comboPattern)) {
                 comboDictionary[combo.comboPattern] = (combo.damageType, combo.damage);
             }
         }
     }
 
     // register new attack to the current combo chain
-    public void RegisterAttack(AttackType attackType) {
-        if (Time.time - last_attack_time > combo_reset_time)
-        {
+    public void RegisterAttack(AttackType attackType)
+    {
+        if (Time.time - last_attack_time > combo_reset_time) {
             if (comboTimeoutDebug) {
                 Debug.Log("combo timeout");
             }
             current_combo.Clear();
         }
-
-        current_combo.Add(attackType); // add attack to the chain
+        // add attack to the chain
+        current_combo.Add(attackType);
         last_attack_time = Time.time;
 
         if (noticeAttackDebug) {
-            Debug.Log($"noticed attack: {attackType}. current combo: {string.Join("", current_combo)}");
+            Debug.Log(
+              $"noticed attack: {attackType}. current combo: {string.Join("", current_combo)}");
         }
 
         CheckCombo();
     }
-    private void CheckCombo() {
+    private void CheckCombo()
+    {
 
         // check if the current combo matches defined patterns
-        if (current_combo.Count == 3)
-        {
+        if (current_combo.Count == 3) {
             string comboKey = string.Join("", current_combo);
 
-            // execute combo event when combo chain matches 
-            if (comboDictionary.TryGetValue(comboKey, out var comboData))
-            {
+            // execute combo event when combo chain matches
+            if (comboDictionary.TryGetValue(comboKey, out var comboData)) {
                 if (comboMatchedDebug) {
-                    Debug.Log($"combo matched: {comboKey}, DamageType: {comboData.damageType}, Damage: {(int)(comboData.damage * blood.DMGMulti)}");
+                    Debug.Log(
+                      $"combo matched: {comboKey}, DamageType: {comboData.damageType}, Damage: {(int)(comboData.damage * blood.DMGMulti)}");
                 }
-                OnComboExecuted?.Invoke(comboData.damageType, (int)(comboData.damage * blood.DMGMulti));
-            }
-            else
-            {
+                OnComboExecuted?.Invoke(comboData.damageType,
+                                        (int)(comboData.damage * blood.DMGMulti));
+            } else {
                 Debug.Log($"no combo found: {comboKey}");
             }
 
@@ -100,5 +106,4 @@ public class ComboSystem : MonoBehaviour
             current_combo.Clear();
         }
     }
-
 }

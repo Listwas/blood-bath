@@ -12,7 +12,7 @@ public class EnemyScript : MonoBehaviour
     public float fireRange = 10f;
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public LayerMask obstacleMask;  
+    public LayerMask obstacleMask;
 
     private Transform player;
     private float nextShootTime;
@@ -29,7 +29,7 @@ public class EnemyScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         blood = FindObjectOfType<spawningBlood>();
         orbs = FindObjectOfType<orbSpawn>();
-        healthBar.DoHealthBar(maxHealth, maxHealth); 
+        healthBar.DoHealthBar(maxHealth, maxHealth);
     }
 
     void Update()
@@ -45,7 +45,8 @@ public class EnemyScript : MonoBehaviour
     // Checks if the player is within firing range
     bool IsPlayerInRange()
     {
-        Vector3 enemyPosition = new Vector3(transform.position.x, 0, transform.position.z);
+        Vector3 enemyPosition =
+          new Vector3(transform.position.x, 0, transform.position.z);
         Vector3 playerPosition = new Vector3(player.position.x, 0, player.position.z);
         float distance = Vector3.Distance(enemyPosition, playerPosition);
 
@@ -72,7 +73,8 @@ public class EnemyScript : MonoBehaviour
             Vector3 direction = (player.position - firePoint.position).normalized;
             direction.y = 0;
 
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            GameObject bullet =
+              Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
 
             Destroy(bullet, bulletLifetime);
@@ -88,7 +90,8 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        // Debug.Log("enemy took " + damage + " damage. Current health: " + currentHealth);
+        // Debug.Log("enemy took " + damage + " damage. Current health: " +
+        // currentHealth);
         healthBar.DoHealthBar(currentHealth, maxHealth);
 
         if (currentHealth <= 0) {
@@ -97,18 +100,18 @@ public class EnemyScript : MonoBehaviour
     }
 
     void Die()
-    {   
-        if (isDead) return;
+    {
+        if (isDead)
+            return;
         isDead = true;
-        Vector3 enemyPosition = new Vector3(transform.position.x, 0, transform.position.z);
-        if(blood != null && orbs != null)
-        {
+        Vector3 enemyPosition =
+          new Vector3(transform.position.x, 0, transform.position.z);
+        if (blood != null && orbs != null) {
             blood.SpawnBloodAt(enemyPosition);
             orbs.SpawnOrbAt(enemyPosition);
         }
         Debug.Log("enemy died!");
         Destroy(gameObject);
         Debug.Log("Die() called for " + gameObject.name);
-
     }
 }

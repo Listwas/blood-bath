@@ -7,6 +7,7 @@ public class stopPlayerMove : MonoBehaviour
     private ThirdPersonMovement move;
     public int blockMovementTime = 5;
     public float blockMovementDelay = 0.2f; //może być bez
+
     void Start()
     {
         evade = FindObjectOfType<PlayerEvade>();
@@ -24,6 +25,7 @@ public class stopPlayerMove : MonoBehaviour
         }
 
     }
+    
     public void stopMove()
     {
         Debug.Log("Stop Move");
