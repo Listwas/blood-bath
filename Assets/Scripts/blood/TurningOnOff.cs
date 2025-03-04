@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class TurningOnOff : MonoBehaviour
 {
-
     public BloodCount bCScript;
     public RawImage[] bloodImage;
 

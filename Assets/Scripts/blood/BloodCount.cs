@@ -62,6 +62,7 @@ public class BloodCount : MonoBehaviour
             DMGMulti = 1.0f;
         }
     }
+    
     public void Reset_BloodPoints()
     {
         if (playerBloodPoints >= resetBloodPoints) {

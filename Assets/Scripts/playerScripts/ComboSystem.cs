@@ -53,7 +53,6 @@ public class ComboSystem : MonoBehaviour
 
     private void InitializeComboDictionary()
     {
-
         // convert the list of combos into dictionary
         comboDictionary = new Dictionary<string, (DamageType, int)>();
         foreach (var combo in combos) {
@@ -83,9 +82,9 @@ public class ComboSystem : MonoBehaviour
 
         CheckCombo();
     }
+
     private void CheckCombo()
     {
-
         // check if the current combo matches defined patterns
         if (current_combo.Count == 3) {
             string comboKey = string.Join("", current_combo);

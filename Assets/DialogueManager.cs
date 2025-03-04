@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-
         Active(true);
 
         lines.Clear();
@@ -74,6 +73,7 @@ public class DialogueManager : MonoBehaviour
         }
         doneTyping = true;
     }
+    
     public void Update()
     {
 

@@ -1,15 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class collisionWithPlayer : MonoBehaviour
+public class CollisionWithPlayer : MonoBehaviour
 {
-    private stopPlayerMove stopScript;
+    private StopPlayerMove stopScript;
     private BloodCount countScript;
-
 
     void Start()
     {
-        stopScript = FindObjectOfType<stopPlayerMove>();
+        stopScript = FindObjectOfType<StopPlayerMove>();
         countScript = FindObjectOfType<BloodCount>();
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class freezeRotation : MonoBehaviour
+public class FreezeRotation : MonoBehaviour
 {
    private Quaternion fixedRotation;
 

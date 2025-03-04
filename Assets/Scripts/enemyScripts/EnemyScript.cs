@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     public float bulletSpeed = 10f;
     public float bulletLifetime = 5f;
     public float fireRange = 10f;
+
     public GameObject bulletPrefab;
     public Transform firePoint;
     public LayerMask obstacleMask;
@@ -17,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     private Transform player;
     private float nextShootTime;
 
-    public spawningBlood blood;
+    public SpawningBlood blood;
     public orbSpawn orbs;
     public FloatingHealthBar healthBar;
     private bool isDead = false;
@@ -27,7 +28,7 @@ public class EnemyScript : MonoBehaviour
         currentHealth = maxHealth;
         healthBar = GetComponentInChildren<FloatingHealthBar>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        blood = FindObjectOfType<spawningBlood>();
+        blood = FindObjectOfType<SpawningBlood>();
         orbs = FindObjectOfType<orbSpawn>();
         healthBar.DoHealthBar(maxHealth, maxHealth);
     }
@@ -42,7 +43,7 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    // Checks if the player is within firing range
+    // checks if the player is within firing range
     bool IsPlayerInRange()
     {
         Vector3 enemyPosition =

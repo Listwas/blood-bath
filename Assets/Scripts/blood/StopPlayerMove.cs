@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class stopPlayerMove : MonoBehaviour
+public class StopPlayerMove : MonoBehaviour
 {
     private PlayerEvade evade;
     private ThirdPersonMovement move;

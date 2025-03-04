@@ -8,7 +8,7 @@ public class FloatingHealthBar : MonoBehaviour
 {
     public Slider slider;
     public Text healthText;
-    // Update is called once per frame
+
     void Awake()
     {
         slider = GetComponentInChildren<Slider>();

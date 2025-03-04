@@ -63,7 +63,6 @@ public class CombatScript : MonoBehaviour
         }
     }
 
-
     public void ProcessPlayerInput()
     {
         if (Input.GetButtonDown("LightAttack") || Input.GetKeyDown(KeyCode.Q))

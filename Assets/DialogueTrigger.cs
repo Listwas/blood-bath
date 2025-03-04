@@ -29,12 +29,14 @@ public class Dialogue
 
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
 }
+
 [System.Serializable]
 public class Conditions
 {
     public string conditionName;
     public bool conditionBool;
 }
+
 public class DialogueTrigger : MonoBehaviour
 {
     public List<Dialogue> availableDialogues;

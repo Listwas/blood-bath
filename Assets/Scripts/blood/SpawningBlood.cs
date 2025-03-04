@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 
-public class spawningBlood : MonoBehaviour
+public class SpawningBlood : MonoBehaviour
 {
     public GameObject bloodPrefab;
     public int bloodDropChance = 100;

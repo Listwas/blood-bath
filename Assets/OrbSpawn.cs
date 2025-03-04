@@ -7,7 +7,6 @@ public class orbSpawn : MonoBehaviour
     public GameObject orb1Prefab;
     public GameObject orb2Prefab;
     public int orbDropChance = 100;
-    
 
     public void SpawnOrbAt(Vector3 enemyPosition)
     {
