@@ -5340,7 +5340,7 @@ Transform:
   m_GameObject: {fileID: 310378840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -488.05527, y: 79.14306, z: -615.71497}
+  m_LocalPosition: {x: -213.2, y: 78.3, z: 91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15830,7 +15830,7 @@ GameObject:
   - component: {fileID: 712384448}
   - component: {fileID: 712384447}
   m_Layer: 0
-  m_Name: Anaman
+  m_Name: Hiriam
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53847,92 +53847,87 @@ MonoBehaviour:
   availableDialogues:
   - dialogueLines:
     - character:
-        name: Meekk
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: "Dzi\u0119kuj\u0119 za pomoc.\r\n"
-    - character:
-        name: Meekk
+        name: Hiriam
         icon: {fileID: 0}
         condition: 
-      line: "Dlaczego mi pomog\u0142e\u015B?\r\n\r\n"
+      line: "Vianno, zabierz mnie st\u0105d.\r\n"
     - character:
-        name: Anaman
+        name: Vianna
         icon: {fileID: 0}
         condition: 
-      line: "A czy to wa\u017Cne? Ja pomog\u0142em Tobie, ty pomo\u017Cesz mi.\r\n"
+      line: "Przykro mi Hiriamie, nie jeste\u015B ju\u017C nam potrzebny.\r\n"
     - character:
-        name: Meekk
+        name: Vianna
         icon: {fileID: 0}
         condition: 
-      line: "Nie prosi\u0142em Ci\u0119 o pomoc.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Beze mnie by\u0142by\u015B martwy.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Ehhh\u2026\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Co mam zrobi\u0107?\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Las mi m\xF3wi, \u017Ce \u017Ale si\u0119 dzieje w moim kr\u0119gu.\r\n\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Rusz wraz ze mn\u0105, \u017Ceby to zbada\u0107. Mo\u017Ce to nic takiego.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "I tak Ci po drodze. Kawa\u0142ek dalej jest Gr\xF3d Brzozowa, ludzie
-        Godarda.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Skoro las tak m\xF3wi... "
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Nie obra\u017Caj mnie. Jestem lasem, a las jest mn\u0105.  "
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Niech Ci b\u0119dzie, ale nie gadaj du\u017Co po drodze. "
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "B\u0119d\u0119 w ukryciu, na wypadek kolejnego ataku."
+      line: "A co do ciebie, ma\u0142a gnido, mia\u0142e\u015B szcz\u0119\u015Bcie,
+        ale nast\u0119pnym razem nie p\xF3jdzie Ci tak \u0142atwo.\r\n"
   - dialogueLines:
     - character:
-        name: Meekk
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: "Ci drwale nie boj\u0105 si\u0119, \u017Ce ich zara\u017C\u0119?\r\n"
-    - character:
-        name: Anaman
+        name: Hiriam
         icon: {fileID: 0}
         condition: 
-      line: "My\u015Bl\u0119, \u017Ce teraz to im wszystko jedno.\r\n"
+      line: "Prosz\u0119...\r\n"
+    - character:
+        name: Hiriam
+        icon: {fileID: 0}
+        condition: 
+      line: "Zr\xF3b to szybko. Nie chc\u0119 widzie\u0107, co m\xF3r zrobi z moim
+        cia\u0142em.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Masz racj\u0119...\r\n"
+      line: "Nie po tym, co zrobi\u0142e\u015B z lasem.\r\n"
+    - character:
+        name: Hiriam
+        icon: {fileID: 0}
+        condition: 
+      line: 'To nie ja. To Godard i ta jego dziwka.
+
+'
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Jaka jest najszybsza droga st\u0105d do Godarda?\r\n"
+    - character:
+        name: Hiriam
+        icon: {fileID: 0}
+        condition: 
+      line: "Id\u0105c g\xF3r\u0105, pr\u0119dzej czy p\xF3\u017Aniej natrafisz na
+        jego wojska.\r\n"
+    - character:
+        name: Hiriam
+        icon: {fileID: 0}
+        condition: 
+      line: "P\xF3jd\u017A do\u0142em, tajnym przej\u015Bciem w studni.\r\n"
+    - character:
+        name: Hiriam
+        icon: {fileID: 0}
+        condition: 
+      line: "Kiedy\u015B \u0142\u0105czy\u0142a si\u0119 z wi\u0119zieniem, ale od
+        dawna nikt tam nie wchodzi\u0142. "
+    - character:
+        name: Hiriam
+        icon: {fileID: 0}
+        condition: 
+      line: "Tamtejszy garnizon przesta\u0142 wysy\u0142a\u0107 nam raporty."
+    - character:
+        name: Hiriam
+        icon: {fileID: 0}
+        condition: 
+      line: "Nie wiem co Ci\u0119 tam czeka, ale to twoje najlepsze wyj\u015Bcie.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Dzi\u0119kuj\u0119.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Dostaniesz szybk\u0105 \u015Bmier\u0107."
   availableConditions:
   - conditionName: 
     conditionBool: 0
@@ -61607,7 +61602,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
-  orthographic: 0
+  orthographic: 1
   orthographic size: 10
   m_Depth: -1
   m_CullingMask:
@@ -61818,7 +61813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3977027908317147937}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21201207, y: -0.000000014562416, z: 0.0000000031592264, w: 0.9772671}
+  m_LocalRotation: {x: 0.22103982, y: 0.000000014532583, z: -0.0000000032937513, w: 0.9752648}
   m_LocalPosition: {x: -105.4, y: 9.747295, z: 603.25684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62396,7 +62391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8847402299127095466}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21201202, y: 0, z: 0, w: 0.9772671}
+  m_LocalRotation: {x: 0.2210398, y: 0, z: 0, w: 0.9752648}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62586,7 +62581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3276037593680293897}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19424808, y: 0, z: 0, w: 0.98095244}
+  m_LocalRotation: {x: 0.21231453, y: 0, z: 0, w: 0.9772014}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

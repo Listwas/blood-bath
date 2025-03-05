@@ -18462,6 +18462,11 @@ MonoBehaviour:
         condition: 
       line: "Trzeba go zniszczy\u0107."
     - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Wypalcie dziur\u0119, a ja dostan\u0119 si\u0119 do \u015Brodka."
+    - character:
         name: Anaman
         icon: {fileID: 0}
         condition: 
@@ -18477,6 +18482,17 @@ MonoBehaviour:
         icon: {fileID: 0}
         condition: 
       line: "Ze\u015Blemy burz\u0119."
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+        condition: 
+      line: "A nu\u017C przypadkiem jaki\u015B piorun wywo\u0142a po\u017Car."
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+        condition: 
+      line: "Skierujcie ca\u0142y sw\xF3j gniew na ludzi, a mo\u017Ce nam si\u0119
+        uda\u0107. Ja zrobi\u0119 reszt\u0119. \r\n"
   availableConditions:
   - conditionName: 
     conditionBool: 0
