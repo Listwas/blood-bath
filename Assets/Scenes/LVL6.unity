@@ -23510,68 +23510,73 @@ MonoBehaviour:
   availableDialogues:
   - dialogueLines:
     - character:
-        name: "Umieraj\u0105cy druid"
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: "Ogie\u0144, nie mieli\u015Bmy szans...\r\n"
-    - character:
-        name: Anaman
+        name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Co z Lyssandr\u0105?\r\n"
+      line: "Ju\u017C nie musisz si\u0119 martwi\u0107. Syndykat zniszczony."
     - character:
-        name: "Umieraj\u0105cy druid"
+        name: Grzyb
         icon: {fileID: 0}
         condition: 
-      line: "Zabrali j\u0105.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: 'A pozostali?
-
-'
-    - character:
-        name: "Umieraj\u0105cy druid"
-        icon: {fileID: 0}
-        condition: 
-      line: "Nie ma pozosta\u0142ych.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Haldzie, powiedz mi\u2026\r\n"
-    - character:
-        name: "Umieraj\u0105cy druid"
-        icon: {fileID: 0}
-        condition: 
-      line: ...
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Hald nic wi\u0119cej nie powie.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Meekku, tw\xF3j d\u0142ug zosta\u0142 sp\u0142acony.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Mog\u0119 Ci\u0119 tylko prosi\u0107, \u017Ceby\u015B poszed\u0142 ze
-        mn\u0105.\r\n"
+      line: "Ja dzi\u0119kuj\u0119. Ty bohater.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "P\xF3jd\u0119.\r\n"
+      line: "Podziemia s\u0105 twoje.\r\n"
+  - dialogueLines:
     - character:
-        name: Anaman
+        name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Dzi\u0119kuj\u0119.\r\n"
+      line: "Co ty zrobi\u0142e\u015B?!?\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Trucizna, bandyci, z\u0142a. Trucizna, ja, dobra.\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Syndykat \u017Cyje-nie. PUF. Syndykat \u017Cyje-tak.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Powinienem Ci\u0119 zabi\u0107.\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Ty musisz nie. Wyj\u015Bcie tu tak.\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Ty wr\xF3ci\u0107 nie. Ty zosta\u0107 \u017Cywy tak.\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: Ty przyjaciel Tak. Ty nagroda Tak
+  - dialogueLines:
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Ty silniejszy tak. Ty zabi\u0107 ludzie \u0142atwo tak. \r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Dzi\u0119ki, ale lepiej, \u017Ceby\u015Bmy si\u0119 wi\u0119cej nie
+        spotkali.\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Tak, tak. Grzyb potwierdza\u0107. Grzyb po\u017Cegna\u0107.\r\n"
   availableConditions:
   - conditionName: 
     conditionBool: 0
@@ -43270,127 +43275,56 @@ MonoBehaviour:
   availableDialogues:
   - dialogueLines:
     - character:
-        name: Anaman
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: 'Starsza Lyssandro.
-
-'
-    - character:
-        name: Lyssandra
+        name: "Paj\u0105k Loq"
         icon: {fileID: 0}
         condition: 
-      line: "Anamanie, chod\u017Amy zabi\u0107 tych skurwysyn\xF3w.\r\n"
+      line: "G\u0142upi\u015B potworze, ty szubrawcze, zabi\u0142e\u015B tylu naszych
+        ludzi. Tyle straconych kosztowno\u015Bci.\r\n"
+    - character:
+        name: "Paj\u0105k Loq"
+        icon: {fileID: 0}
+        condition: 
+      line: "Po\u017Ca\u0142ujesz tego, czerwoniutki. \r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Z przyjemno\u015Bci\u0105 wam pomog\u0119.\r\n"
+      line: "Daj mi przej\u015B\u0107 i zostaw mieszka\u0144c\xF3w podziemia w spokoju. "
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Nie prosi\u0142em Ci\u0119 o pomoc.\r\n"
+      line: "A mo\u017Cesz prze\u017Cyjesz.\r\n"
+    - character:
+        name: Trollica Mondra
+        icon: {fileID: 0}
+        condition: 
+      line: "Za przej\u015Bcie przyjdzie ci s\u0142ono zabroni\u0107. \r\n"
+    - character:
+        name: Trollica Mondra
+        icon: {fileID: 0}
+        condition: 
+      line: "I za te gro\u017Aby. Bezczelne gro\u017Aby."
+    - character:
+        name: Trollica Mondra
+        icon: {fileID: 0}
+        condition: 
+      line: "Wej\u015Bcie do twierdzy oznacza twoj\u0105 zgub\u0119.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Powiedz tylko gdzie oni s\u0105.\r\n"
+      line: "Jeszcze macie szans\u0119 si\u0119 wycofa\u0107.\r\n"
     - character:
-        name: Lyssandra
+        name: "Paj\u0105k Loq"
         icon: {fileID: 0}
         condition: 
-      line: "Gr\xF3d Brzozowa. Tam jest Hiriam i reszta drwali.\r\n"
+      line: "Po\u017Ca\u0142ujesz tego, \u017Ce tu przyszed\u0142e\u015B.\r\n"
     - character:
-        name: Lyssandra
+        name: "Paj\u0105k Loq"
         icon: {fileID: 0}
         condition: 
-      line: "Jak ci\u0119 zw\u0105, m\u015Bciwa istoto.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: 'Meekk, Pani.
-
-'
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "Meekku, wyrusz na zwiad. Ja w tym czasie opatrz\u0119 Anamana i razem
-        ruszymy do walki.\r\n"
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "Nie miej \u017Cadnej lito\u015Bci.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Skoro las tak m\xF3wi... "
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Nie obra\u017Caj mnie. Jestem lasem, a las jest mn\u0105.  "
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Niech Ci b\u0119dzie, ale nie gadaj du\u017Co po drodze. "
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "B\u0119d\u0119 w ukryciu, na wypadek kolejnego ataku."
-  - dialogueLines:
-    - character:
-        name: Lyssandra
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: "S\u0142uchamy Ci\u0119 Meekku.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Nasza tr\xF3jka to za ma\u0142o, aby zdoby\u0107 gr\xF3d.\r\n\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Ich ostrok\xF3\u0142 pokonamy tylko w jeden spos\xF3b.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: 'Ogniem.
-
-'
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "My druidzi, nie u\u017Cywamy tak barbarzy\u0144skiej magii, to wbrew
-        naturze.\r\n"
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "Dzi\u015B nagniemy zasady. Ze\u015Bl\u0119 burz\u0119.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Skierujcie ca\u0142y sw\xF3j gniew na ludzi, a mo\u017Ce nam si\u0119
-        uda. Ja zrobi\u0119 reszte.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: 'Wierzymy w Ciebie, Meekku
-
-'
+      line: "S\u0142u\u017Cba, zaj\u0105\u0107 si\u0119 nim."
   availableConditions:
   - conditionName: 
     conditionBool: 0
@@ -43646,7 +43580,7 @@ Transform:
   m_GameObject: {fileID: 1614448035}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
-  m_LocalPosition: {x: 72.9, y: -78.4, z: -195.8}
+  m_LocalPosition: {x: 72.9, y: -77.84, z: -195.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

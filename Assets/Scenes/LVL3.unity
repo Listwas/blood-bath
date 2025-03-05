@@ -2279,53 +2279,6 @@ MonoBehaviour:
         icon: {fileID: 0}
         condition: 
       line: "B\u0119d\u0119 w ukryciu, na wypadek kolejnego ataku."
-  - dialogueLines:
-    - character:
-        name: Lyssandra
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: "S\u0142uchamy Ci\u0119 Meekku.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Nasza tr\xF3jka to za ma\u0142o, aby zdoby\u0107 gr\xF3d.\r\n\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Ich ostrok\xF3\u0142 pokonamy tylko w jeden spos\xF3b.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: 'Ogniem.
-
-'
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "My druidzi, nie u\u017Cywamy tak barbarzy\u0144skiej magii, to wbrew
-        naturze.\r\n"
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "Dzi\u015B nagniemy zasady. Ze\u015Bl\u0119 burz\u0119.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Skierujcie ca\u0142y sw\xF3j gniew na ludzi, a mo\u017Ce nam si\u0119
-        uda. Ja zrobi\u0119 reszte.\r\n"
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: 'Wierzymy w Ciebie, Meekku
-
-'
   availableConditions:
   - conditionName: 
     conditionBool: 0
@@ -17177,7 +17130,7 @@ GameObject:
   - component: {fileID: 1662515251}
   - component: {fileID: 1662515250}
   m_Layer: 0
-  m_Name: "Dialog po doj\u015Bciu pod Gr\xF3d Brzozowa"
+  m_Name: Dialog po powrocie ze zwiadu
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
