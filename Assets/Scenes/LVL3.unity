@@ -3286,10 +3286,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2027477801}
-  - {fileID: 926564914}
-  - {fileID: 1094798513}
   - {fileID: 1614246825}
+  - {fileID: 2027477801}
+  - {fileID: 1094798513}
+  - {fileID: 926564914}
   - {fileID: 1662515249}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18461,6 +18461,22 @@ MonoBehaviour:
         icon: {fileID: 0}
         condition: 
       line: "Trzeba go zniszczy\u0107."
+    - character:
+        name: Anaman
+        icon: {fileID: 0}
+        condition: 
+      line: "My druidzi, nie u\u017Cywamy tak barbarzy\u0144skiej magii, to wbrew
+        naturze.\r\n"
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+        condition: 
+      line: "Dzi\u015B nagniemy zasady. "
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+        condition: 
+      line: "Ze\u015Blemy burz\u0119."
   availableConditions:
   - conditionName: 
     conditionBool: 0
