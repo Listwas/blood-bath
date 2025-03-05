@@ -1864,70 +1864,150 @@ MonoBehaviour:
         ale nast\u0119pnym razem nie p\xF3jdzie Ci tak \u0142atwo.\r\n"
   - dialogueLines:
     - character:
-        name: Hiriam
-        icon: {fileID: 0}
-        condition: 
-      line: "Prosz\u0119...\r\n"
-    - character:
-        name: Hiriam
-        icon: {fileID: 0}
-        condition: 
-      line: "Zr\xF3b to szybko. Nie chc\u0119 widzie\u0107, co m\xF3r zrobi z moim
-        cia\u0142em.\r\n"
-    - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Nie po tym, co zrobi\u0142e\u015B z lasem.\r\n"
+      line: "Kim jeste\u015Bcie?\r\n"
     - character:
-        name: Hiriam
+        name: Grzyb
         icon: {fileID: 0}
         condition: 
-      line: 'To nie ja. To Godard i ta jego dziwka.
+      line: 'Wszystkim grzybem.
 
 '
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Jaka jest najszybsza droga st\u0105d do Godarda?\r\n"
+      line: "Dlaczego \u017Cyjecie w takich warunkach?\r\n\r\n"
     - character:
-        name: Hiriam
+        name: Grzyb
         icon: {fileID: 0}
         condition: 
-      line: "Id\u0105c g\xF3r\u0105, pr\u0119dzej czy p\xF3\u017Aniej natrafisz na
-        jego wojska.\r\n"
+      line: 'Nie rozumiesz. Jestem jedno.
+
+'
     - character:
-        name: Hiriam
+        name: Grzyb
         icon: {fileID: 0}
         condition: 
-      line: "P\xF3jd\u017A do\u0142em, tajnym przej\u015Bciem w studni.\r\n"
-    - character:
-        name: Hiriam
-        icon: {fileID: 0}
-        condition: 
-      line: "Kiedy\u015B \u0142\u0105czy\u0142a si\u0119 z wi\u0119zieniem, ale od
-        dawna nikt tam nie wchodzi\u0142. "
-    - character:
-        name: Hiriam
-        icon: {fileID: 0}
-        condition: 
-      line: "Tamtejszy garnizon przesta\u0142 wysy\u0142a\u0107 nam raporty."
-    - character:
-        name: Hiriam
-        icon: {fileID: 0}
-        condition: 
-      line: "Nie wiem co Ci\u0119 tam czeka, ale to twoje najlepsze wyj\u015Bcie.\r\n"
+      line: "Bandyci mi zrobili. \r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Dzi\u0119kuj\u0119.\r\n"
+      line: 'Ludzie Godarda?
+
+'
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: 'Nie ludzie. Tak Potwory.
+
+'
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Kiedy\u015B ludzie. Bandyci.\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: 'Teraz potwory. Bandyci.
+
+'
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: 'Potwory jak ludzie. Prawie. Gorsze Tak.
+
+'
     - character:
         name: Meekk
         icon: {fileID: 0}
         condition: 
-      line: "Dostaniesz szybk\u0105 \u015Bmier\u0107."
+      line: "Widzia\u0142em innych \u201Cmieszka\u0144c\xF3w\u201D. Dlaczego nie
+        po\u0142\u0105czycie si\u0142?\r\n"
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: 'Oni strach. Ja strach. Bandyci zbiornik. Zbiornik trucizna.
+
+'
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: 'Ja smutny. Bandyci trucizna. Podziemia.
+
+'
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Ja powierzchnia nie. My umrze\u0107 tak.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Musz\u0119 i\u015B\u0107.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: 'Trucizna mnie nie zatrzyma.
+
+'
+    - character:
+        name: Grzyby
+        icon: {fileID: 0}
+        condition: 
+      line: 'Trucizna Nie. Syndykat Tak. '
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: 'Hm? '
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: 'Hm. '
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: 'Ehh. Co to jest Syndykat? '
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Kr\xF3lowa. Troll. Kr\xF3l Paj\u0105k. Troll Paj\u0105k Razem. "
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "Kr\xF3lowa. Troll. Kr\xF3l Paj\u0105k. Troll Paj\u0105k Razem. "
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "B\u0119d\u0119 uwa\u017Ca\u0142, pozb\u0119d\u0119 ich i zbiornik b\u0119dzie
+        wasz. "
+    - character:
+        name: Grzyb
+        icon: {fileID: 0}
+        condition: 
+      line: "Ja dzi\u0119kuj\u0119. Ty umrze\u0107 nie. "
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+        condition: 
+      line: "O to si\u0119 nie b\xF3j. "
   availableConditions:
   - conditionName: 
     conditionBool: 0
@@ -48043,7 +48123,7 @@ Transform:
   m_GameObject: {fileID: 1716882697}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
-  m_LocalPosition: {x: 70.5, y: -77.8, z: -111.6}
+  m_LocalPosition: {x: -88.9, y: -75.9, z: 340.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
