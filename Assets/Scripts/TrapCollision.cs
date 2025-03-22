@@ -11,7 +11,7 @@ public class TrapCollision : MonoBehaviour
             Debug.Log("Player in trap");
             var combat = collision.GetComponent<CombatScript>();
             if (combat != null) {
-                combat.TakeDamage(trapDMG);
+                combat.TakeDamage(trapDMG, null); 
             }
         }
     }

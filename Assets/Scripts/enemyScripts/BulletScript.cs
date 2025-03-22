@@ -5,6 +5,12 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public int bulletDamage = 10;
+    private Transform attacker;
+    
+    public void SetAttacker(Transform enemyTransform)
+    {
+        attacker = enemyTransform;
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,7 +22,7 @@ public class BulletScript : MonoBehaviour
                     Destroy(gameObject);
                     return;
                 }
-                playerCombat.TakeDamage(bulletDamage);
+                playerCombat.TakeDamage(bulletDamage, attacker); 
             }
             Destroy(gameObject);
         } else if (other.gameObject.CompareTag("Obstacle")) {

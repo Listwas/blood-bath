@@ -74,8 +74,12 @@ public class EnemyScript : MonoBehaviour
             Vector3 direction = (player.position - firePoint.position).normalized;
             direction.y = 0;
 
-            GameObject bullet =
-              Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+            if (bulletScript != null)
+            {
+                bulletScript.SetAttacker(this.transform); 
+            }
             bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
 
             Destroy(bullet, bulletLifetime);

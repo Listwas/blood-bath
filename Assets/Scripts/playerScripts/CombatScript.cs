@@ -31,6 +31,9 @@ public class CombatScript : MonoBehaviour
     private float parryEndTime;
     public float parryRange = 1.5f;
 
+    public float blockDamageMultiplier = 0.5f;
+    private bool isBlocking = false;
+
     private FloatingHealthBar healthBar;
 
     [Header("Debug Log Enabler")]
@@ -53,7 +56,7 @@ public class CombatScript : MonoBehaviour
         healthBar.DoHealthBar(currentHealth, maxHealth);
     }
 
-   private void Update()
+    private void Update()
     {
         healthBar.DoHealthBar(currentHealth, maxHealth);
 
@@ -82,20 +85,39 @@ public class CombatScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             StartParry();
         }
-        else if (Input.GetKeyUp(KeyCode.F)) 
+        else if (Input.GetKeyUp(KeyCode.T))
         {
             StopParry();
+        }
+
+        if (Input.GetKey(KeyCode.B))
+        {
+            if (!isBlocking)
+            {
+                StartBlocking();
+            }
+        }
+        else
+        {
+            if (isBlocking)
+            {
+                StopBlocking();
+            }
         }
     }
 
     private void StartParry()
     {
+        if (isBlocking)
+        {
+            StopBlocking();
+        }
         isParrying = true;
-        parryEndTime = Time.time + parryDuration; // Max duration
+        parryEndTime = Time.time + parryDuration;
         animator.SetTrigger("parry");
         Debug.Log("Player started parrying!");
     }
@@ -105,7 +127,25 @@ public class CombatScript : MonoBehaviour
         isParrying = false;
         Debug.Log("Player stopped parrying!");
     }
-    
+
+    private void StartBlocking()
+    {
+        if (isParrying)
+        {
+            StopParry();
+        }
+        isBlocking = true;
+        animator.SetBool("isBlocking", true);
+        Debug.Log("Player started blocking!");
+    }
+
+    private void StopBlocking()
+    {
+        isBlocking = false;
+        animator.SetBool("isBlocking", false);
+        Debug.Log("Player stopped blocking!");
+    }
+
     public bool IsParrying()
     {
         return isParrying;
@@ -159,15 +199,30 @@ public class CombatScript : MonoBehaviour
         }
         return false;
     }
-
-    public void TakeDamage(int damageAmount)
+    // TODO
+    // FIX BLOCK 
+    public void TakeDamage(int damageAmount, Transform attacker)
     {
-        if (isParrying)
+        if (isParrying && attacker != null)
         {
-            Debug.Log("Parry successful! No damage taken.");
-            return;
+            Vector3 directionToAttacker = (attacker.position - transform.position).normalized;
+            float dotProduct = Vector3.Dot(transform.forward, directionToAttacker);
+            float distanceToAttacker = Vector3.Distance(transform.position, attacker.position);
+            if (dotProduct > 0.5f && distanceToAttacker <= parryRange)
+            {
+                Debug.Log("parry successful");
+                return; 
+            }
         }
+
+        if (isBlocking)
+        {
+            damageAmount = (int)(damageAmount * blockDamageMultiplier);
+            Debug.Log($"block successful, damage reduced to {damageAmount}");
+        }
+
         currentHealth -= damageAmount;
+
         if (currentHealth > 0)
         {
             if (takenDamageDebug)

@@ -2805,6 +2805,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3016716857334720029, guid: 80f27504ebd1f5f878a91c0952b6df0f, type: 3}
       propertyPath: showParryRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016716857334720029, guid: 80f27504ebd1f5f878a91c0952b6df0f, type: 3}
+      propertyPath: takenDamageDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016716857334720029, guid: 80f27504ebd1f5f878a91c0952b6df0f, type: 3}
+      propertyPath: comboExecutedDebug
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3016716857334720029, guid: 80f27504ebd1f5f878a91c0952b6df0f, type: 3}
