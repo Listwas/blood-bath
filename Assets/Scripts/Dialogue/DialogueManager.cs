@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
- 
+
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
- 
+    
     public Image characterIcon;
     public Text characterName;
     public Text dialogueArea;
@@ -15,10 +16,13 @@ public class DialogueManager : MonoBehaviour
     public GameObject panelBottom;
     private bool doneTyping = false;
 
+    //test eventow
+
+    public static event Action<string> OnConditionDialogue;
+
  
     private Queue<DialogueLine> lines;
-    
-    
+
  
     public float typingSpeed = 0.2f;
  
@@ -32,13 +36,11 @@ public class DialogueManager : MonoBehaviour
         lines = new Queue<DialogueLine>();
         Active(false);
     }
+//test
+    public static void DialogueEvent(string newCondition){
+        OnConditionDialogue?.Invoke(newCondition);
+        }
 
-    //void matchdialogue{
-    //zmiana w dikt
-    //try match with dikt
-    //if matched startdialogue
-    //}
- 
     public void StartDialogue(Dialogue dialogue)
     {
         
@@ -89,7 +91,7 @@ public class DialogueManager : MonoBehaviour
     public void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.F) && doneTyping)
+        if (Input.GetKeyDown(KeyCode.G) && doneTyping)
         {
             DisplayNextDialogueLine();
         }
@@ -108,4 +110,8 @@ public class DialogueManager : MonoBehaviour
         panelTop.SetActive(state);
         panelBottom.SetActive(state);
     }
+
+
+
+   
 }
