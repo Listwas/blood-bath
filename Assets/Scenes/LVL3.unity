@@ -335,73 +335,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDialogues:
-  - dialogueLines:
+  - conditionName: 
+    isThisDialogueCondition: 1
+    whatNewCondition: "DruidNie\u017Byje"
+    dialogueLines:
     - character:
         name: "Umieraj\u0105cy druid"
         icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
       line: "Ogie\u0144, nie mieli\u015Bmy szans...\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Co z Lyssandr\u0105?\r\n"
     - character:
         name: "Umieraj\u0105cy druid"
         icon: {fileID: 0}
-        condition: 
       line: "Zabrali j\u0105.\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: 'A pozostali?
 
 '
     - character:
         name: "Umieraj\u0105cy druid"
         icon: {fileID: 0}
-        condition: 
       line: "Nie ma pozosta\u0142ych.\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Haldzie, powiedz mi\u2026\r\n"
     - character:
         name: "Umieraj\u0105cy druid"
         icon: {fileID: 0}
-        condition: 
       line: ...
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Hald nic wi\u0119cej nie powie.\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Meekku, tw\xF3j d\u0142ug zosta\u0142 sp\u0142acony.\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Mog\u0119 Ci\u0119 tylko prosi\u0107, \u017Ceby\u015B poszed\u0142 ze
         mn\u0105.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "P\xF3jd\u0119.\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Dzi\u0119kuj\u0119.\r\n"
-  availableConditions:
-  - conditionName: 
-    conditionBool: 0
+  allDialogues:
+  - conditionName: "DruidNie\u017Byje"
+    isThisDialogueCondition: 0
+    whatNewCondition: 
+    dialogueLines:
+    - character:
+        name: Hald
+        icon: {fileID: 0}
+      line: "(Nie \u017Cyje)"
+  allConditionsForThisNPC:
+  - "DruidNie\u017Byje"
+  currentCondition: 
 --- !u!136 &16334096
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2203,85 +2203,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDialogues:
-  - dialogueLines:
+  - conditionName: 
+    isThisDialogueCondition: 1
+    whatNewCondition: Lyssandra1
+    dialogueLines:
     - character:
         name: Anaman
         icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
       line: 'Starsza Lyssandro.
 
 '
     - character:
         name: Lyssandra
         icon: {fileID: 0}
-        condition: 
       line: "Anamanie, chod\u017Amy zabi\u0107 tych skurwysyn\xF3w.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Z przyjemno\u015Bci\u0105 wam pomog\u0119.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Nie prosi\u0142em Ci\u0119 o pomoc.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Powiedz tylko gdzie oni s\u0105.\r\n"
     - character:
         name: Lyssandra
         icon: {fileID: 0}
-        condition: 
       line: "Gr\xF3d Brzozowa. Tam jest Hiriam i reszta drwali.\r\n"
     - character:
         name: Lyssandra
         icon: {fileID: 0}
-        condition: 
       line: "Jak ci\u0119 zw\u0105, m\u015Bciwa istoto.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: 'Meekk, Pani.
 
 '
     - character:
         name: Lyssandra
         icon: {fileID: 0}
-        condition: 
       line: "Meekku, wyrusz na zwiad. Ja w tym czasie opatrz\u0119 Anamana i razem
         ruszymy do walki.\r\n"
     - character:
         name: Lyssandra
         icon: {fileID: 0}
-        condition: 
-      line: "Nie miej \u017Cadnej lito\u015Bci.\r\n"
+      line: "Nie miej dla nich \u017Cadnej lito\u015Bci.\r\n"
+  allDialogues:
+  - conditionName: Lyssandra1
+    isThisDialogueCondition: 0
+    whatNewCondition: 
+    dialogueLines:
+    - character:
+        name: Lyssandra
+        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
+      line: "Wr\xF3\u0107 ca\u0142y, Meekku."
+  - conditionName: "Powr\xF3tZeZwiadu"
+    isThisDialogueCondition: 0
+    whatNewCondition: 
+    dialogueLines:
+    - character:
+        name: Meekk
+        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
+      line: "Nie przejdziemy przen ten ostrok\xF3\u0142."
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
-      line: "Skoro las tak m\xF3wi... "
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "Nie obra\u017Caj mnie. Jestem lasem, a las jest mn\u0105.  "
+      line: "Trzeba go zniszczy\u0107."
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
-      line: "Niech Ci b\u0119dzie, ale nie gadaj du\u017Co po drodze. "
+      line: "Wypalcie dziur\u0119, a ja dostan\u0119 si\u0119 do \u015Brodka."
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
-      line: "B\u0119d\u0119 w ukryciu, na wypadek kolejnego ataku."
-  availableConditions:
-  - conditionName: 
-    conditionBool: 0
+      line: "My druidzi, nie u\u017Cywamy tak barbarzy\u0144skiej magii, to wbrew
+        naturze.\r\n"
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+      line: "Dzi\u015B nagniemy zasady. "
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+      line: "Ze\u015Blemy burz\u0119."
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+      line: "A nu\u017C przypadkiem jaki\u015B piorun wywo\u0142a po\u017Car."
+    - character:
+        name: Lyssandra
+        icon: {fileID: 0}
+      line: "Skierujcie ca\u0142y sw\xF3j gniew na ludzi, a mo\u017Ce nam si\u0119
+        uda\u0107. Ja zrobi\u0119 reszt\u0119. \r\n"
+  allConditionsForThisNPC:
+  - Lyssandra1
+  - "Powr\xF3tZeZwiadu"
+  currentCondition: 
 --- !u!136 &114239878
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3241,9 +3258,10 @@ Transform:
   m_Children:
   - {fileID: 1614246825}
   - {fileID: 2027477801}
+  - {fileID: 1949043006}
   - {fileID: 1094798513}
   - {fileID: 926564914}
-  - {fileID: 1662515249}
+  - {fileID: 1198678263}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263802825
@@ -10007,7 +10025,7 @@ Transform:
   m_GameObject: {fileID: 926564913}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
-  m_LocalPosition: {x: 70.5, y: -77.8, z: -111.6}
+  m_LocalPosition: {x: 120.8, y: -77.6, z: -381.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11720,7 +11738,7 @@ Transform:
   m_GameObject: {fileID: 1094798512}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
-  m_LocalPosition: {x: 70.5, y: -77.8, z: -111.6}
+  m_LocalPosition: {x: 70.5, y: -77.91, z: -126.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12765,6 +12783,114 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1198678262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198678263}
+  - component: {fileID: 1198678266}
+  - component: {fileID: 1198678265}
+  - component: {fileID: 1198678264}
+  m_Layer: 0
+  m_Name: Dialog pod murami.
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1198678263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198678262}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
+  m_LocalPosition: {x: 106.56, y: -78.07, z: -391.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1849469516}
+  m_Father: {fileID: 245729957}
+  m_LocalEulerAnglesHint: {x: 0.405, y: 180.017, z: -0.47}
+--- !u!136 &1198678264
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198678262}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1198678265
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198678262}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1198678266
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198678262}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1216967773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14897,20 +15023,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDialogues:
-  - dialogueLines:
+  - conditionName: 
+    isThisDialogueCondition: 0
+    whatNewCondition: 
+    dialogueLines:
     - character:
         name: Anaman
         icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
       line: "Wytrzymaj jeszcze chwil\u0119!\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Uwa\u017Caj na wiry magii!\r\n"
-  availableConditions:
-  - conditionName: 
-    conditionBool: 0
+  allDialogues: []
+  allConditionsForThisNPC: []
+  currentCondition: 
 --- !u!136 &1496948485
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15032,97 +15159,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDialogues:
-  - dialogueLines:
+  - conditionName: 
+    isThisDialogueCondition: 1
+    whatNewCondition: PoRozmowieZAnamanem1
+    dialogueLines:
     - character:
         name: Meekk
         icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
       line: "Dzi\u0119kuj\u0119 za pomoc.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Dlaczego mi pomog\u0142e\u015B?\r\n\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "A czy to wa\u017Cne? Ja pomog\u0142em Tobie, ty pomo\u017Cesz mi.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Nie prosi\u0142em Ci\u0119 o pomoc.\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Beze mnie by\u0142by\u015B martwy.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Ehhh\u2026\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Co mam zrobi\u0107?\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Las mi m\xF3wi, \u017Ce \u017Ale si\u0119 dzieje w moim kr\u0119gu.\r\n\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Rusz wraz ze mn\u0105, \u017Ceby to zbada\u0107. Mo\u017Ce to nic takiego.\r\n"
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "I tak Ci po drodze. Kawa\u0142ek dalej jest Gr\xF3d Brzozowa, ludzie
         Godarda.\r\n"
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Skoro las tak m\xF3wi... "
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "Nie obra\u017Caj mnie. Jestem lasem, a las jest mn\u0105.  "
     - character:
         name: Meekk
         icon: {fileID: 0}
-        condition: 
       line: "Niech Ci b\u0119dzie, ale nie gadaj du\u017Co po drodze. "
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
       line: "B\u0119d\u0119 w ukryciu, na wypadek kolejnego ataku."
-  - dialogueLines:
-    - character:
-        name: Meekk
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: "Ci drwale nie boj\u0105 si\u0119, \u017Ce ich zara\u017C\u0119?\r\n"
+  allDialogues:
+  - conditionName: PoRozmowieZAnamanem1
+    isThisDialogueCondition: 0
+    whatNewCondition: 
+    dialogueLines:
     - character:
         name: Anaman
         icon: {fileID: 0}
-        condition: 
-      line: "My\u015Bl\u0119, \u017Ce teraz to im wszystko jedno.\r\n"
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Masz racj\u0119...\r\n"
-  availableConditions:
-  - conditionName: 
-    conditionBool: 0
+      line: "Pomog\u0119 Ci, ale z ukrycia."
+  allConditionsForThisNPC:
+  - PoRozmowieZAnamanem1
+  currentCondition: 
 --- !u!136 &1510641203
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17117,114 +17226,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4151225218368634, guid: e409369781974684095924fc5a1fce2e, type: 3}
   m_PrefabInstance: {fileID: 1658064309}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1662515248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1662515249}
-  - component: {fileID: 1662515252}
-  - component: {fileID: 1662515251}
-  - component: {fileID: 1662515250}
-  m_Layer: 0
-  m_Name: Dialog po powrocie ze zwiadu
-  m_TagString: NPC
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1662515249
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662515248}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
-  m_LocalPosition: {x: 66.099, y: -77.932, z: -109.266}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1742130340}
-  m_Father: {fileID: 245729957}
-  m_LocalEulerAnglesHint: {x: 0.405, y: 180.017, z: -0.47}
---- !u!136 &1662515250
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662515248}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1662515251
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662515248}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1662515252
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662515248}
-  m_Mesh: {fileID: 0}
 --- !u!43 &1671419748
 Mesh:
   m_ObjectHideFlags: 0
@@ -18355,173 +18356,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 24867984}
   m_LocalEulerAnglesHint: {x: 0.017, y: 0.439, z: 87.735}
---- !u!1 &1742130339
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1742130340}
-  - component: {fileID: 1742130344}
-  - component: {fileID: 1742130343}
-  - component: {fileID: 1742130342}
-  - component: {fileID: 1742130341}
-  m_Layer: 0
-  m_Name: Range
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1742130340
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742130339}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.98, z: 0}
-  m_LocalScale: {x: 4.9739, y: 0.06015635, z: 4.9739}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1662515249}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1742130341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742130339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65886cf9fa165da4aa78de7dfc3ffc31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableDialogues:
-  - dialogueLines:
-    - character:
-        name: Meekk
-        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
-        condition: 
-      line: "Nie przejdziemy przen ten ostrok\xF3\u0142."
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Trzeba go zniszczy\u0107."
-    - character:
-        name: Meekk
-        icon: {fileID: 0}
-        condition: 
-      line: "Wypalcie dziur\u0119, a ja dostan\u0119 si\u0119 do \u015Brodka."
-    - character:
-        name: Anaman
-        icon: {fileID: 0}
-        condition: 
-      line: "My druidzi, nie u\u017Cywamy tak barbarzy\u0144skiej magii, to wbrew
-        naturze.\r\n"
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "Dzi\u015B nagniemy zasady. "
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "Ze\u015Blemy burz\u0119."
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "A nu\u017C przypadkiem jaki\u015B piorun wywo\u0142a po\u017Car."
-    - character:
-        name: Lyssandra
-        icon: {fileID: 0}
-        condition: 
-      line: "Skierujcie ca\u0142y sw\xF3j gniew na ludzi, a mo\u017Ce nam si\u0119
-        uda\u0107. Ja zrobi\u0119 reszt\u0119. \r\n"
-  availableConditions:
-  - conditionName: 
-    conditionBool: 0
---- !u!136 &1742130342
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742130339}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!23 &1742130343
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742130339}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1742130344
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742130339}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1747607038
 GameObject:
   m_ObjectHideFlags: 0
@@ -18764,7 +18598,7 @@ MonoBehaviour:
   dialogueArea: {fileID: 930203781}
   panelTop: {fileID: 733605922}
   panelBottom: {fileID: 2057977359}
-  typingSpeed: 0.2
+  typingSpeed: 0.01
 --- !u!4 &1776002332
 Transform:
   m_ObjectHideFlags: 0
@@ -19252,6 +19086,154 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 814bf0035a7247b4db84ad4932f32607, type: 3}
   m_PrefabInstance: {fileID: 1830624345}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1849469515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849469516}
+  - component: {fileID: 1849469520}
+  - component: {fileID: 1849469519}
+  - component: {fileID: 1849469518}
+  - component: {fileID: 1849469517}
+  m_Layer: 0
+  m_Name: Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1849469516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849469515}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.98, z: 0}
+  m_LocalScale: {x: 4.9739, y: 0.06015635, z: 4.9739}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1198678263}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849469517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849469515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65886cf9fa165da4aa78de7dfc3ffc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableDialogues:
+  - conditionName: 
+    isThisDialogueCondition: 1
+    whatNewCondition: "Powr\xF3tZeZwiadu"
+    dialogueLines:
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+      line: "Ostrok\xF3\u0142 wygl\u0105da na solidny.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+      line: "Zdobycie grodu nie b\u0119dzie \u0142atwe.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+      line: "Si\u0142a nic tu nie da.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+      line: "Z magi\u0105 druid\xF3w mam jakie\u015B szanse. \r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+      line: "Pora wraca\u0107, lepiej, \u017Ceby mnie nikt tu nie zauwa\u017Cy\u0142."
+  allDialogues: []
+  allConditionsForThisNPC: []
+  currentCondition: 
+--- !u!136 &1849469518
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849469515}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1849469519
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849469515}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1849469520
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849469515}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!43 &1850446501
 Mesh:
   m_ObjectHideFlags: 0
@@ -20074,6 +20056,155 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4025713376117910, guid: 46ae6b65058d5b841bd8686cc154ee0b, type: 3}
   m_PrefabInstance: {fileID: 1912274280}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1926322574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926322575}
+  - component: {fileID: 1926322579}
+  - component: {fileID: 1926322578}
+  - component: {fileID: 1926322577}
+  - component: {fileID: 1926322576}
+  m_Layer: 0
+  m_Name: Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926322575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926322574}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.98, z: 0}
+  m_LocalScale: {x: 4.9739, y: 0.06015635, z: 4.9739}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1949043006}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1926322576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926322574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65886cf9fa165da4aa78de7dfc3ffc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableDialogues:
+  - conditionName: 
+    isThisDialogueCondition: 0
+    whatNewCondition: 
+    dialogueLines:
+    - character:
+        name: Meekk
+        icon: {fileID: 21300000, guid: be7135b041eaab94180c342c7f114cab, type: 3}
+      line: "Ci drwale nie boj\u0105 si\u0119, \u017Ce ich zara\u017C\u0119?\r\n"
+    - character:
+        name: Anaman
+        icon: {fileID: 0}
+      line: "My\u015Bl\u0119, \u017Ce teraz to im wszystko jedno.\r\n"
+    - character:
+        name: Meekk
+        icon: {fileID: 0}
+      line: "Masz racj\u0119...\r\n"
+  allDialogues:
+  - conditionName: PoWalceZDrwalami1
+    isThisDialogueCondition: 0
+    whatNewCondition: 
+    dialogueLines:
+    - character:
+        name: 
+        icon: {fileID: 0}
+      line: 
+  allConditionsForThisNPC:
+  - PoWalceZDrwalami1
+  currentCondition: 
+--- !u!136 &1926322577
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926322574}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1926322578
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926322574}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1926322579
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926322574}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1928053477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20144,6 +20275,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4068638244980102, guid: 340c1e8bd6d5c8c439f37f85e55bd6e3, type: 3}
   m_PrefabInstance: {fileID: 1928053477}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1949043005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949043006}
+  - component: {fileID: 1949043009}
+  - component: {fileID: 1949043008}
+  - component: {fileID: 1949043007}
+  m_Layer: 0
+  m_Name: Po walce z drwalami\
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1949043006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949043005}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
+  m_LocalPosition: {x: 70.5, y: -78.21, z: -111.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1926322575}
+  m_Father: {fileID: 245729957}
+  m_LocalEulerAnglesHint: {x: 0.405, y: 180.017, z: -0.47}
+--- !u!136 &1949043007
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949043005}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1949043008
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949043005}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1949043009
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949043005}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1961947804
 GameObject:
   m_ObjectHideFlags: 0
@@ -20579,6 +20818,125 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2011312344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011312349}
+  - component: {fileID: 2011312348}
+  - component: {fileID: 2011312347}
+  - component: {fileID: 2011312346}
+  - component: {fileID: 2011312345}
+  m_Layer: 0
+  m_Name: DialogueConditionChangeTest (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2011312345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011312344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aabf59fa77d2a45b3e49deb84f96fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testName: "WygranaZViann\u0105Faza1"
+--- !u!65 &2011312346
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011312344}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2011312347
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011312344}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fdcda1f93a725a042bcdc6e7ca6651b9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2011312348
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011312344}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2011312349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011312344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -350.6, y: 2.15, z: -598.84}
+  m_LocalScale: {x: 4.5179, y: 4.5179, z: 4.5179}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027477797
 GameObject:
   m_ObjectHideFlags: 0
@@ -20680,7 +21038,7 @@ Transform:
   m_GameObject: {fileID: 2027477797}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004099447, y: 0.99998534, z: -0.003534822, w: -0.00016584013}
-  m_LocalPosition: {x: 70.5, y: -77.8, z: -111.6}
+  m_LocalPosition: {x: 70.5, y: -78.21, z: -111.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21745,7 +22103,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 25
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -21804,8 +22162,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177215140224064665}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21201207, y: -0.000000014562416, z: 0.0000000031592264, w: 0.9772671}
-  m_LocalPosition: {x: 187.6, y: 10.099993, z: 49.799988}
+  m_LocalRotation: {x: 0.20794937, y: 0.000000035702335, z: -0.000000007590203, w: 0.97813964}
+  m_LocalPosition: {x: 13.200012, y: 10.1, z: -115.400024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22086,8 +22444,8 @@ Camera:
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
-  orthographic: 0
-  orthographic size: 10
+  orthographic: 1
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -22187,7 +22545,7 @@ Transform:
   m_GameObject: {fileID: 1433259693842458016}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 187.6, y: -14.9, z: 99.8}
+  m_LocalPosition: {x: 13.2, y: -14.9, z: -65.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22339,7 +22697,7 @@ MonoBehaviour:
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 25
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -22599,7 +22957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7056797681765797650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21201202, y: 0, z: 0, w: 0.9772671}
+  m_LocalRotation: {x: 0.20794936, y: 0, z: 0, w: 0.97813964}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22706,7 +23064,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 25
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -22804,7 +23162,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 25
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -22866,7 +23224,7 @@ Transform:
   m_GameObject: {fileID: 7110963268698603311}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 187.6, y: 10.099993, z: 49.799988}
+  m_LocalPosition: {x: 13.200012, y: 10.1, z: -115.400024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22999,7 +23357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3913719662254301105}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19424808, y: 0, z: 0, w: 0.98095244}
+  m_LocalRotation: {x: 0.18612932, y: 0, z: 0, w: 0.9825253}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23059,3 +23417,4 @@ SceneRoots:
   - {fileID: 531620364}
   - {fileID: 1776002332}
   - {fileID: 1790097717}
+  - {fileID: 2011312349}
