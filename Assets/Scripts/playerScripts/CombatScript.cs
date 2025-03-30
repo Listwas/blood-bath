@@ -190,9 +190,10 @@ public class CombatScript : MonoBehaviour
             foreach (Collider enemy in hitEnemies)
             {
                 EnemyScript enemyScript = enemy.GetComponent<EnemyScript>();
+                ModelAIScript ModelAIScript = enemy.GetComponent<ModelAIScript>();
                 if (enemyScript != null)
                 {
-                    enemyScript.TakeDamage(damage);
+                    ModelAIScript.TakeDamage(damage);
                 }
             }
             return true;
