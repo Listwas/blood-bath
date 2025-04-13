@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class bloodCount : MonoBehaviour
     public int playerBloodPoints = 0; // ile krwi ma na sobie gracz
     public int addBloodPoints = 5; //ile krwi dodane po wejsciu w plame krwi
     public float DMGMulti = 1.0f; //mnożnik dmg
-    public int bloodOnScreenNum = 0;//ile img krwi na ekranie
+    //public int bloodOnScreenNum = 0;//ile img krwi na ekranie
 
     [Header("Fear Mode")]
     public int bloodPointsFearMode = 50; // jak dużo krwi gracz musi mieć do osiągnięcia fear mode
@@ -16,6 +17,8 @@ public class bloodCount : MonoBehaviour
     [Header("When reset")]
     public int resetDMGMulti = 4;
     public int resetBloodPoints = 100;
+
+    public event Action OnHitBlood;
 
     
 
@@ -46,7 +49,7 @@ public class bloodCount : MonoBehaviour
         {
             Debug.Log("Add dmg");
             DMGMulti += 0.1f;
-            bloodOnScreenNum += 1;
+            //bloodOnScreenNum += 1;
             Reset_DMGMulti();
         }
     }
@@ -77,6 +80,12 @@ public class bloodCount : MonoBehaviour
             playerBloodPoints = 0;
         }
                 
+    }
+//event 
+    public void BloodOnScreen()
+    {
+        if (OnHitBlood != null)
+            OnHitBlood.Invoke();
     }
 
 }

@@ -22,12 +22,15 @@ public class EnemyScript : MonoBehaviour
     public FloatingHealthBar healthBar;
     private bool isDead = false;
 
+    private bloodCount bC;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar = GetComponentInChildren<FloatingHealthBar>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         blood = FindObjectOfType<spawningBlood>();
+        bC = FindObjectOfType<bloodCount>();
         orbs = FindObjectOfType<orbSpawn>();
         healthBar.DoHealthBar(maxHealth, maxHealth); 
     }
@@ -90,6 +93,7 @@ public class EnemyScript : MonoBehaviour
         currentHealth -= damage;
         // Debug.Log("enemy took " + damage + " damage. Current health: " + currentHealth);
         healthBar.DoHealthBar(currentHealth, maxHealth);
+        bC.BloodOnScreen();
 
         if (currentHealth <= 0) {
             Die();

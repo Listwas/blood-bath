@@ -1674,6 +1674,7 @@ MonoBehaviour:
   - {fileID: 1467310133}
   - {fileID: 902860582}
   - {fileID: 1364784790}
+  bloodyScreenChance: 100
 --- !u!1 &597879842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4117,7 +4118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2099167763530361965, guid: ffc6ea308eba6d05c86cda45ae04abe1, type: 3}
       propertyPath: current_health
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2099167763530361965, guid: ffc6ea308eba6d05c86cda45ae04abe1, type: 3}
       propertyPath: showAttackRange
