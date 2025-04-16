@@ -24,8 +24,6 @@ public abstract class BaseAIScript : MonoBehaviour
     //States
     [SerializeField] protected float sightRange = 10f;
     [SerializeField] protected float attackRange = 2f;
-    protected bool playerInSightRange;
-    protected bool playerInAttackRange;
     protected float distanceToPlayer;
 
     [Header("Moved from EnemyScript.cs")]
@@ -129,8 +127,8 @@ public abstract class BaseAIScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        // Debug.Log("enemy took " + damage + " damage. Current health: " +
-        // currentHealth);
+         Debug.Log("enemy took " + damage + " damage. Current health: " +
+         currentHealth);
         healthBar.DoHealthBar(currentHealth, maxHealth);
 
         if (currentHealth <= 0)

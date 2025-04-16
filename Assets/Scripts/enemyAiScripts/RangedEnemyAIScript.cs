@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Android.Types;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class RangedEnemyAIScript : BaseAIScript
 {
-    
-
     protected override void HandleStates()
     { 
         distanceToPlayer = (player.position - transform.position).sqrMagnitude;
@@ -20,6 +18,16 @@ public class RangedEnemyAIScript : BaseAIScript
         else if (distanceToPlayer < attackRange * attackRange)
         {
             AttackPlayer();
+            /*
+            if (CanShootFreely())
+            {
+                AttackPlayer();
+            }
+            else
+            {
+                agent.SetDestination(player.position);
+            }
+            */
         }
         else if (distanceToPlayer < sightRange * sightRange)
         {
@@ -44,6 +52,51 @@ public class RangedEnemyAIScript : BaseAIScript
             agent.SetDestination(hit.position);
         }
     }
+
+    /*
+    //checks for obstacles between enemy and player while trying to shoot
+    protected bool CanShootFreely()
+    {
+        RaycastHit hit;
+        Vector3 directionToPlayer = (player.position - firePoint.position).normalized;
+
+        if (Physics.SphereCast(transform.position, 0.5f, directionToPlayer, out hit, attackRange, obstacleMask))
+        {
+            Debug.Log("obstacle between enemy and player");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        
+    }
+
+    protected void WalkAroundObstacle()
+    {
+        float searchRadius = 10f;
+        int attempts = 20;
+
+        for (int i = 0; i < attempts; i++)
+        {
+            Vector3 randomDir = Random.insideUnitSphere * searchRadius;
+            randomDir.y = 0;
+            Vector3 candidatePos = transform.position + randomDir;
+
+            if (NavMesh.SamplePosition(candidatePos, out NavMeshHit navHit, 1.0f, NavMesh.AllAreas))
+            {
+                Vector3 dirToPlayer = (player.position - navHit.position).normalized;
+                float distance = Vector3.Distance(navHit.position, player.position);
+
+                if (distance <= attackRange && !Physics.SphereCast(firePoint.position, 0.3f, dirToPlayer, out RaycastHit hit, distance, obstacleMask))
+                {
+                    agent.SetDestination(navHit.position);
+                    break; // Found a good spot!
+                }
+            }
+        }
+    }
+    */
 
     protected override void AttackPlayer()
     {
@@ -93,10 +146,13 @@ public class RangedEnemyAIScript : BaseAIScript
 
     private void OnDrawGizmosSelected()
     {
+        //sight range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+        //attack range
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+        //flee range
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange/2);
     }
