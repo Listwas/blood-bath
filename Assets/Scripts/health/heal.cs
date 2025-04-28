@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class heal : MonoBehaviour
 {
+    [SerializeField]private GameEvents events;
+    [SerializeField]private int healIndex;
+    [SerializeField]private string healType;
+    void Start()
+    {
+        events = FindObjectOfType<GameEvents>();
+    }
     public void OnTriggerEnter(Collider collision){
         if( collision.tag == "Player"){
             if (collision is BoxCollider){
-                healOnTrigger(collision);
+                Debug.Log("wejscie w heal");
+                events.HealEnter(healType, healIndex);
+                //Destroy(gameObject);
             }
             
         }
     }
-    void healOnTrigger(Collider collision){
-        var healthComponent = collision.GetComponent<CombatScript>();
-            if (healthComponent != null){
-                healthComponent.HealingOneTime(10);
-                Destroy(gameObject);
-            }
-    }
+
 }

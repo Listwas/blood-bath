@@ -172,23 +172,6 @@ public class CombatScript : MonoBehaviour
         }
     }
 
-    public void HealingOneTime(int healAmount){
-        current_health += healAmount;
-        if(current_health > max_health){
-            current_health = max_health;
-        }
-    }
-    public IEnumerator timedHealing(int healAmount){
-        for(int i = 1; i <= 5; i++){
-            current_health += healAmount;
-            
-            if(current_health > max_health){
-                current_health = max_health;
-            }
-            yield return new WaitForSeconds(3);
-        }
-
-    }
 
     private void OnDrawGizmos()
     {

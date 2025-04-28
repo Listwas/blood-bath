@@ -20,7 +20,10 @@ public class TurningOnOff : MonoBehaviour
     void Awake()
     {
         bCScript = FindObjectOfType<bloodCount>();
-        WipeScreen();
+        foreach (RawImage img in bloodImage)
+            {
+                img.enabled = true;
+            }
 
     }
 
@@ -62,6 +65,7 @@ public class TurningOnOff : MonoBehaviour
           foreach (RawImage img in bloodImage)
             {
                 img.enabled = false;
+                
             }  
     }
 

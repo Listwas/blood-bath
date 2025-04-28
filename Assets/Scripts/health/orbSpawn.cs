@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class orbSpawn : MonoBehaviour
 {
-    public GameObject orb1Prefab;
-    public GameObject orb2Prefab;
-    public int orbDropChance = 100;
-    
+    [SerializeField] private List<GameObject> healingOrbsList;
+    [SerializeField] private int OrbDropChance = 100;
+    [SerializeField] private float heightOffset;
 
-    public void SpawnOrbAt(Vector3 enemyPosition)
-    {
-        int randomNum = Random.Range(1, 101);
-        Debug.Log($"You have {orbDropChance}% chance of spawning orb.");
-        int randomOrb = Random.Range(1, 3);
-
-        if (randomNum <= orbDropChance)
+    private int randomNum;
+    [SerializeField]private GameEvents events;
+    void Awake()
         {
-            if(randomOrb == 1){
-                Instantiate(orb1Prefab, enemyPosition + new Vector3(0, 1, 0), transform.rotation);
-            }
-            if(randomOrb == 2){
-                Instantiate(orb2Prefab, enemyPosition + new Vector3(0, 1, 0), transform.rotation);
-            }
-            
+            events = FindObjectOfType<GameEvents>();
         }
-
+    private void OnEnable()
+    {
+        events.OnEnemyDeath += SpawnRandomOrbAtPosition;
     }
+
+    private void OnDisable()
+    {
+        events.OnEnemyDeath -= SpawnRandomOrbAtPosition;
+    }
+
+    private void SpawnRandomOrbAtPosition(Vector3 enemyPosition){
+        Debug.Log("odebrano sygnal o zgonie przeciwnika");
+        randomNum = Random.Range(1, 101);
+        if(randomNum <= OrbDropChance){
+            int randomOrb = Random.Range(0, healingOrbsList.Count);
+            Instantiate(healingOrbsList[randomOrb], new Vector3(enemyPosition.x, enemyPosition.y + heightOffset, enemyPosition.z), transform.rotation);
+        }
+    }    
 }

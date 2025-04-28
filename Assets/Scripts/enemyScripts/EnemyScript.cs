@@ -18,11 +18,12 @@ public class EnemyScript : MonoBehaviour
     private float nextShootTime;
 
     public spawningBlood blood;
-    public orbSpawn orbs;
+    
     public FloatingHealthBar healthBar;
     private bool isDead = false;
 
     private bloodCount bC;
+    private GameEvents events;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class EnemyScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         blood = FindObjectOfType<spawningBlood>();
         bC = FindObjectOfType<bloodCount>();
-        orbs = FindObjectOfType<orbSpawn>();
+        events = FindObjectOfType<GameEvents>();
         healthBar.DoHealthBar(maxHealth, maxHealth); 
     }
 
@@ -104,12 +105,17 @@ public class EnemyScript : MonoBehaviour
     {   
         if (isDead) return;
         isDead = true;
-        Vector3 enemyPosition = new Vector3(transform.position.x, 0, transform.position.z);
-        if(blood != null && orbs != null)
+        Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
+        
+        //do usunięcia
+        if(blood != null)
         {
-            blood.SpawnBloodAt(enemyPosition);
-            orbs.SpawnOrbAt(enemyPosition);
+            blood.SpawnBloodAt(position);
+            
         }
+
+
+        events.EnemyDied(position);
         Debug.Log("enemy died!");
         Destroy(gameObject);
         Debug.Log("Die() called for " + gameObject.name);
