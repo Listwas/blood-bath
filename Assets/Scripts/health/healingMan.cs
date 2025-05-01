@@ -36,14 +36,16 @@ public class healingMan : MonoBehaviour
         events.OnHealEnter -= findHeal;
     }
 
-    private void findHeal(string healType, int healIndex){
+    private void findHeal(string healType){
         if(healType == "normal"){
+            int healIndex = Random.Range(0, NormalHealsList.Count);
             doNormalHealing(healIndex);
-            Debug.Log("normal healing with" + healIndex + "index");
+            Debug.Log("normal healing with " + healIndex + " index");
         }
         else if(healType == "timed"){
+            int healIndex = Random.Range(0, TimedHealsList.Count);
             StartCoroutine(doTimedHealing(healIndex));
-            Debug.Log("timed healing with" + healIndex + "index good");
+            Debug.Log("timed healing with " + healIndex + " index good");
         }
     }
 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class heal : MonoBehaviour
 {
     [SerializeField]private GameEvents events;
-    [SerializeField]private int healIndex;
     [SerializeField]private string healType;
     void Start()
     {
@@ -15,7 +14,7 @@ public class heal : MonoBehaviour
         if( collision.tag == "Player"){
             if (collision is BoxCollider){
                 Debug.Log("wejscie w heal");
-                events.HealEnter(healType, healIndex);
+                events.HealEnter(healType);
                 //Destroy(gameObject);
             }
             

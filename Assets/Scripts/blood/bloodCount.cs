@@ -18,7 +18,6 @@ public class bloodCount : MonoBehaviour
     public int resetDMGMulti = 4;
     public int resetBloodPoints = 100;
 
-    public event Action OnHitBlood;
 
     
 
@@ -82,10 +81,6 @@ public class bloodCount : MonoBehaviour
                 
     }
 //event 
-    public void BloodOnScreen()
-    {
-        if (OnHitBlood != null)
-            OnHitBlood.Invoke();
-    }
+    
 
 }

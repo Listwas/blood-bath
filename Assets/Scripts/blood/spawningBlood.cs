@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class spawningBlood : MonoBehaviour
 {
-    public GameObject bloodPrefab;
-    public int bloodDropChance = 100;
-    public int bloodDestructionTime;
+    [SerializeField]private GameObject bloodPrefab;
+    [SerializeField]private int bloodDropChance = 100;
+    [SerializeField]private int bloodDestructionTime;
     private PlayerEvade ev;
-    void Start(){
+    private GameEvents events;
+    void Awake(){
         ev = FindObjectOfType<PlayerEvade>();
+        events = FindObjectOfType<GameEvents>();
+    }
+    private void OnEnable()
+    {
+        events.OnEnemyDeath += SpawnBloodAt;
+    }
+
+    private void OnDisable()
+    {
+        events.OnEnemyDeath -= SpawnBloodAt;
     }
 
     public void SpawnBloodAt(Vector3 enemyPosition)
@@ -21,7 +32,6 @@ public class spawningBlood : MonoBehaviour
         {
             Debug.Log($"Blood spawned at position {enemyPosition} with {bloodDropChance}% chance.");
             GameObject spawnedBlood = Instantiate(bloodPrefab, enemyPosition, transform.rotation);
-
             StartCoroutine(bloodDestroy(spawnedBlood));
         }
 

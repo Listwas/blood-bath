@@ -16,8 +16,6 @@ public class EnemyScript : MonoBehaviour
 
     private Transform player;
     private float nextShootTime;
-
-    public spawningBlood blood;
     
     public FloatingHealthBar healthBar;
     private bool isDead = false;
@@ -30,7 +28,6 @@ public class EnemyScript : MonoBehaviour
         currentHealth = maxHealth;
         healthBar = GetComponentInChildren<FloatingHealthBar>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        blood = FindObjectOfType<spawningBlood>();
         bC = FindObjectOfType<bloodCount>();
         events = FindObjectOfType<GameEvents>();
         healthBar.DoHealthBar(maxHealth, maxHealth); 
@@ -92,9 +89,9 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        // Debug.Log("enemy took " + damage + " damage. Current health: " + currentHealth);
         healthBar.DoHealthBar(currentHealth, maxHealth);
-        bC.BloodOnScreen();
+
+        events.EnemyHit();
 
         if (currentHealth <= 0) {
             Die();
@@ -106,15 +103,6 @@ public class EnemyScript : MonoBehaviour
         if (isDead) return;
         isDead = true;
         Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
-        
-        //do usunięcia
-        if(blood != null)
-        {
-            blood.SpawnBloodAt(position);
-            
-        }
-
-
         events.EnemyDied(position);
         Debug.Log("enemy died!");
         Destroy(gameObject);
