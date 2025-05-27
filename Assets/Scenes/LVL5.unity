@@ -37696,7 +37696,7 @@ GameObject:
   - component: {fileID: 1274654000}
   - component: {fileID: 1274653999}
   m_Layer: 0
-  m_Name: "Dialog przed ostroko\u0142em"
+  m_Name: Dialog po pokonaniu Hiriama i Vianny
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
