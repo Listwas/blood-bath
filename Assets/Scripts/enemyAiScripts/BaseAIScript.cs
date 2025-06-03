@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public abstract class BaseAIScript : MonoBehaviour
 {
-    [SerializeField] protected NavMeshAgent agent;
+    protected NavMeshAgent agent;
 
     protected Transform player;
 
@@ -23,7 +24,8 @@ public abstract class BaseAIScript : MonoBehaviour
 
     //States
     [SerializeField] protected float sightRange = 10f;
-    [SerializeField] protected float attackRange = 2f;
+    public float attackRange => GetAttackRange();
+
     protected float distanceToPlayer;
 
     [Header("Moved from EnemyScript.cs")]
@@ -50,18 +52,21 @@ public abstract class BaseAIScript : MonoBehaviour
         blood = FindObjectOfType<SpawningBlood>();
         orbs = FindObjectOfType<orbSpawn>();
         healthBar.DoHealthBar(currentHealth, maxHealth);
+        agent = GetComponent<NavMeshAgent>();
     }
 
     protected virtual void Update()
     {
         HandleStates();
+        
     }
 
     protected virtual void HandleStates()
     {
         distanceToPlayer = (player.position - transform.position).sqrMagnitude;
-
-        if (distanceToPlayer < attackRange * attackRange)
+        float newAttackRange = GetAttackRange();
+        //Debug.Log("Current attack range value: " + newAttackRange);
+        if (distanceToPlayer < newAttackRange * newAttackRange)
         {
             AttackPlayer();
         }
@@ -124,11 +129,16 @@ public abstract class BaseAIScript : MonoBehaviour
         agent.SetDestination(player.position);
     }
 
+    protected virtual float GetAttackRange()
+    {
+        return 5f;
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-         Debug.Log("enemy took " + damage + " damage. Current health: " +
-         currentHealth);
+        Debug.Log("enemy took " + damage + " damage. Current health: " +
+        currentHealth);
         healthBar.DoHealthBar(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
@@ -153,5 +163,14 @@ public abstract class BaseAIScript : MonoBehaviour
         Destroy(gameObject);
         Debug.Log("Die() called for " + gameObject.name);
     }
-}
 
+    protected virtual void OnDrawGizmosSelected()
+    {
+        //sight range
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+        //attack range
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+}

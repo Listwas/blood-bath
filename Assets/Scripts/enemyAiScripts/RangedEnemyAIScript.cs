@@ -6,6 +6,9 @@ using UnityEngine.AI;
 
 public class RangedEnemyAIScript : BaseAIScript
 {
+    public float repositionRadius = 5f;
+    public int repositionSampleCount = 12;
+
     protected override void HandleStates()
     { 
         distanceToPlayer = (player.position - transform.position).sqrMagnitude;
@@ -13,21 +16,25 @@ public class RangedEnemyAIScript : BaseAIScript
         if (distanceToPlayer < ((attackRange * attackRange) / 2))
         {
             //if player is too close, run away from him
-            Flee();
+            if(HasLineOfSight())
+            {
+                Flee();
+            }
+            
         }
         else if (distanceToPlayer < attackRange * attackRange)
         {
-            AttackPlayer();
-            /*
-            if (CanShootFreely())
+            //AttackPlayer();
+            
+            if (HasLineOfSight())
             {
                 AttackPlayer();
             }
             else
             {
-                agent.SetDestination(player.position);
+                WalkAroundObstacle();
             }
-            */
+            
         }
         else if (distanceToPlayer < sightRange * sightRange)
         {
@@ -49,13 +56,14 @@ public class RangedEnemyAIScript : BaseAIScript
         NavMeshHit hit;
         if (NavMesh.SamplePosition(fleeTarget, out hit, 2f, NavMesh.AllAreas))
         {
+            Debug.Log("enemy flees");
             agent.SetDestination(hit.position);
         }
     }
 
-    /*
+    
     //checks for obstacles between enemy and player while trying to shoot
-    protected bool CanShootFreely()
+    protected bool HasLineOfSight()
     {
         RaycastHit hit;
         Vector3 directionToPlayer = (player.position - firePoint.position).normalized;
@@ -74,29 +82,36 @@ public class RangedEnemyAIScript : BaseAIScript
 
     protected void WalkAroundObstacle()
     {
-        float searchRadius = 10f;
-        int attempts = 20;
+        Vector3 center = player.position;
+        float angleStep = 360f / repositionSampleCount;
 
-        for (int i = 0; i < attempts; i++)
+        for (int i = 0; i < repositionSampleCount; i++)
         {
-            Vector3 randomDir = Random.insideUnitSphere * searchRadius;
-            randomDir.y = 0;
-            Vector3 candidatePos = transform.position + randomDir;
+            float angle = i * angleStep;
+            Vector3 dir = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), 0, Mathf.Sin(angle * Mathf.Deg2Rad));
+            Vector3 samplePos = center + dir * repositionRadius;
 
-            if (NavMesh.SamplePosition(candidatePos, out NavMeshHit navHit, 1.0f, NavMesh.AllAreas))
+
+
+            NavMeshHit navHit;
+
+
+            if (NavMesh.SamplePosition(samplePos, out navHit, 1.0f, NavMesh.AllAreas))
             {
-                Vector3 dirToPlayer = (player.position - navHit.position).normalized;
-                float distance = Vector3.Distance(navHit.position, player.position);
+                // Simulate shot from sample position
+                Vector3 shootDir = (player.position - navHit.position).normalized;
+                float dist = Vector3.Distance(navHit.position, player.position);
 
-                if (distance <= attackRange && !Physics.SphereCast(firePoint.position, 0.3f, dirToPlayer, out RaycastHit hit, distance, obstacleMask))
+                if (!Physics.SphereCast(navHit.position, bulletPrefab.GetComponent<SphereCollider>().radius * 0.8f, shootDir, out RaycastHit hit, dist, obstacleMask)
+                    || hit.transform == player)
                 {
                     agent.SetDestination(navHit.position);
-                    break; // Found a good spot!
+                    return;
                 }
             }
         }
     }
-    */
+    
 
     protected override void AttackPlayer()
     {
@@ -144,7 +159,7 @@ public class RangedEnemyAIScript : BaseAIScript
         hasAlreadyAttacked = false;
     }
 
-    private void OnDrawGizmosSelected()
+    protected override void OnDrawGizmosSelected()
     {
         //sight range
         Gizmos.color = Color.yellow;
