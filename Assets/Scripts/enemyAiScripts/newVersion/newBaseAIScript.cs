@@ -82,36 +82,37 @@ public class newBaseAIScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Enemy in MeleeMode");
+            //Debug.Log("Enemy in MeleeMode");
             HandleStatesMelee(distanceToPlayer, newAttackRange);
         }
-        attackCooldownTimer -= Time.deltaTime;
+        if(attackCooldownTimer > 0f)
+        {
+            Debug.Log("attackCooldownTimer decreased. Current value: " + attackCooldownTimer);
+            attackCooldownTimer -= Time.deltaTime;
+        }
+
     }
 
     protected virtual void HandleStatesMelee(float distanceToPlayer, float newAttackRange)
     {
-
-
         if (distanceToPlayer < newAttackRange * newAttackRange)
         {
-            Debug.Log("Attacking player in MeleeMode");
+            //Debug.Log("Attacking player in MeleeMode");
             AttackPlayer();
         }
         else if (distanceToPlayer < (newAttackRange + chaseOffset) * (newAttackRange + chaseOffset) )
         {
-            Debug.Log("Chasing player in MeleeMode");
+            //Debug.Log("Chasing player in MeleeMode");
             ChasePlayer();
         }
         else
         {
             RandomPatrol();
-        }
-        
+        }       
     }
 
     private void HandleStatesRanged(float distanceToPlayer, float newAttackRange)
     {
-
         if (distanceToPlayer < ((newAttackRange * newAttackRange) / 2))
         {
             //if player is too close, run away from him
@@ -142,7 +143,6 @@ public class newBaseAIScript : MonoBehaviour
         {
             RandomPatrol();
         }
-        
     }
 
     private void Flee()
@@ -218,9 +218,9 @@ public class newBaseAIScript : MonoBehaviour
 
             if (attackingPatters == AttackingPatters.RoundRobin)
             {
-                Debug.Log("AttackPlayer called!");
+                Debug.Log("DoAttack called!");
                 DoAttack(attackIndex);
-
+                Debug.Log("Right after DoAttack called!");
                 attackIndex++;
 
                 if (attackIndex >= attackSOs.Length)
@@ -233,7 +233,7 @@ public class newBaseAIScript : MonoBehaviour
 
     private void DoAttack(int attackIndex)
     {
-        Debug.Log("DoAttack called! " + attackSOs[attackIndex].attackName);
+        //Debug.Log("DoAttack called! " + attackSOs[attackIndex].attackName);
         attackSOs[attackIndex].ExecuteAttack(transform, player, firePoint, playerMask, this);
     }
 

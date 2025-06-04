@@ -11,7 +11,7 @@ public class ChargeAttackSO : AttackSO
     [Header("Charge attack variables")]
     [SerializeField] private float chargeDelay = 1.5f;
     [SerializeField] private float chargeSpeed = 10f;
-    [SerializeField] private float chargeMinDistance = 4f;
+    //[SerializeField] private float chargeMinDistance = 4f;
     [SerializeField] private float chargeMaxDistance = 10f;
     [SerializeField] private int chargeRepeats = 1;
 
@@ -25,6 +25,11 @@ public class ChargeAttackSO : AttackSO
 
     private bool isCharging = false;
 
+    private void OnEnable()
+    {
+        isCharging = false;
+    }
+
     public override void ExecuteAttack(Transform attacker, Transform target, Transform shootOrigin, LayerMask targetMask, MonoBehaviour context)
     {
         
@@ -35,50 +40,17 @@ public class ChargeAttackSO : AttackSO
 
 
         Debug.Log("Starting charge!");
-        
+
+        Debug.Log("current value of isCharging: " + isCharging);
         if(!isCharging)
         {
+            Debug.Log("Starting coroutine");
             context.StartCoroutine(ChargeSeriesRoutine(attacker, target, agent, targetMask, context));
         }
 
 
     }
 
-    /*
-    private void GetInPosition(NavMeshAgent agent, Transform target)
-    {
-        float bestDistance = float.MaxValue;
-        Vector3 bestPosition = agent.transform.position;
-
-        const int samplePoints = 16;
-        float angleStep = 360f / samplePoints;
-
-        for (int i = 0; i < samplePoints; i++)
-        {
-            float angle = i * angleStep * Mathf.Deg2Rad;
-            Vector3 direction = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
-
-            // Try positions from min to max distance along this direction
-            for (float distance = chargeMinDistance; distance <= chargeMaxDistance; distance += 0.5f)
-            {
-                Vector3 testPos = target.position + direction * distance;
-
-                if (NavMesh.SamplePosition(testPos, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
-                {
-                    float distToEnemy = Vector3.Distance(agent.transform.position, hit.position);
-                    if (distToEnemy < bestDistance)
-                    {
-                        bestDistance = distToEnemy;
-                        bestPosition = hit.position;
-                    }
-                    break; // found a valid position in this direction
-                }
-            }
-        }
-
-        agent.SetDestination(bestPosition);
-    }
-    */
 
     private void DisplayChargeIndicatorStatic(Transform attacker, Transform target, Vector3 directionToPlayer, float indicatorDuration)
     {
@@ -116,7 +88,7 @@ public class ChargeAttackSO : AttackSO
         Vector3 directionToPlayer = (target.position - attacker.position).normalized;
         Vector3 chargeDestination = attacker.position + directionToPlayer * chargeMaxDistance;
 
-        Debug.Log("DisplayChargeIndicatorStatic called!");
+        //Debug.Log("DisplayChargeIndicatorStatic called!");
         DisplayChargeIndicatorStatic(attacker, target, directionToPlayer, chargeWaitDuration);
 
 
@@ -156,9 +128,22 @@ public class ChargeAttackSO : AttackSO
 
     private IEnumerator ChargeSeriesRoutine(Transform attacker, Transform target, NavMeshAgent agent, LayerMask targetMask, MonoBehaviour context)
     {
+
+
         for (int i = 0; i < chargeRepeats; i++)
         {
-            float chargeSeriesDelay = 0.5f;
+            float chargeSeriesDelay;
+
+            if(chargeRepeats != 1)
+            {
+                chargeSeriesDelay = 0.5f;
+            }
+            else
+            {
+                chargeSeriesDelay = chargeDelay;
+            }
+
+            
 
             while(isCharging)
             {
@@ -171,4 +156,40 @@ public class ChargeAttackSO : AttackSO
             yield return new WaitForSeconds(0.1f);
         }
     }
+    
+    /*
+    private void GetInPosition(NavMeshAgent agent, Transform target)
+    {
+        float bestDistance = float.MaxValue;
+        Vector3 bestPosition = agent.transform.position;
+
+        const int samplePoints = 16;
+        float angleStep = 360f / samplePoints;
+
+        for (int i = 0; i < samplePoints; i++)
+        {
+            float angle = i * angleStep * Mathf.Deg2Rad;
+            Vector3 direction = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
+
+            // Try positions from min to max distance along this direction
+            for (float distance = chargeMinDistance; distance <= chargeMaxDistance; distance += 0.5f)
+            {
+                Vector3 testPos = target.position + direction * distance;
+
+                if (NavMesh.SamplePosition(testPos, out NavMeshHit hit, 0.5f, NavMesh.AllAreas))
+                {
+                    float distToEnemy = Vector3.Distance(agent.transform.position, hit.position);
+                    if (distToEnemy < bestDistance)
+                    {
+                        bestDistance = distToEnemy;
+                        bestPosition = hit.position;
+                    }
+                    break; // found a valid position in this direction
+                }
+            }
+        }
+
+        agent.SetDestination(bestPosition);
+    }
+    */
 }

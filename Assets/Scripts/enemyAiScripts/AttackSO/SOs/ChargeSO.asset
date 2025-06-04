@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Charge Attack
   damage: 20
-  cooldown: 3
+  cooldown: 6
   isRanged: 0
-  chargeDelay: 1
-  chargeSpeed: 20
+  chargeDelay: 0.8
+  chargeSpeed: 30
   chargeMinDistance: 4
-  chargeMaxDistance: 10
+  chargeMaxDistance: 12
+  chargeRepeats: 2
   indicatorColor: {r: 1, g: 0.5896226, b: 0.5896226, a: 0.42745098}
-  indicatorDuration: 2
   hitboxSize: {x: 1, y: 2, z: 1}

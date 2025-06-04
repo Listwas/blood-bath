@@ -5,8 +5,9 @@ public abstract class AttackSO : ScriptableObject
     public string attackName;
     public int damage;
     public float cooldown;
-    public bool isRanged = false;
 
+
+    public virtual bool isRanged => false;
     public virtual float attackRange => 5f;
 
     public abstract void ExecuteAttack(Transform attacker, Transform target, Transform shootOrigin, LayerMask targetMask, MonoBehaviour context);
