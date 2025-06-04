@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 [CreateAssetMenu(menuName = "EnemyAttacks/ChargeAttack")]
 public class ChargeAttackSO : AttackSO
@@ -12,10 +13,11 @@ public class ChargeAttackSO : AttackSO
     [SerializeField] private float chargeSpeed = 10f;
     [SerializeField] private float chargeMinDistance = 4f;
     [SerializeField] private float chargeMaxDistance = 10f;
+    [SerializeField] private int chargeRepeats = 1;
 
     [Header("Charge indicator variables")]
     [SerializeField] private Color indicatorColor = Color.red;
-    [SerializeField] private float indicatorDuration = 2f;
+    //[SerializeField] private float indicatorDuration = 2f;
 
     [SerializeField] private Vector3 hitboxSize = new Vector3 (1f, 2f, 1f);
 
@@ -33,16 +35,16 @@ public class ChargeAttackSO : AttackSO
 
 
         Debug.Log("Starting charge!");
-        isCharging = true;
-
-        context.StartCoroutine(ChargeRoutine(attacker, target, agent, chargeDelay, targetMask));
-
-            
         
+        if(!isCharging)
+        {
+            context.StartCoroutine(ChargeSeriesRoutine(attacker, target, agent, targetMask, context));
+        }
+
 
     }
 
-
+    /*
     private void GetInPosition(NavMeshAgent agent, Transform target)
     {
         float bestDistance = float.MaxValue;
@@ -76,8 +78,9 @@ public class ChargeAttackSO : AttackSO
 
         agent.SetDestination(bestPosition);
     }
+    */
 
-    private void DisplayChargeIndicatorStatic(Transform attacker, Transform target, Vector3 directionToPlayer)
+    private void DisplayChargeIndicatorStatic(Transform attacker, Transform target, Vector3 directionToPlayer, float indicatorDuration)
     {
         Renderer renderer = attacker.GetComponentInChildren<Renderer>();
         float width = renderer != null ? renderer.bounds.size.x : 1f;
@@ -107,13 +110,14 @@ public class ChargeAttackSO : AttackSO
     private IEnumerator ChargeRoutine(Transform attacker, Transform target, NavMeshAgent agent, float chargeWaitDuration, LayerMask targetMask)
     {
         agent.isStopped = true;
-        
+        isCharging = true;
+
 
         Vector3 directionToPlayer = (target.position - attacker.position).normalized;
         Vector3 chargeDestination = attacker.position + directionToPlayer * chargeMaxDistance;
 
         Debug.Log("DisplayChargeIndicatorStatic called!");
-        DisplayChargeIndicatorStatic(attacker, target, directionToPlayer);
+        DisplayChargeIndicatorStatic(attacker, target, directionToPlayer, chargeWaitDuration);
 
 
         yield return new WaitForSeconds(chargeWaitDuration);
@@ -148,5 +152,23 @@ public class ChargeAttackSO : AttackSO
         }
         agent.isStopped = false;
         isCharging = false;
+    }
+
+    private IEnumerator ChargeSeriesRoutine(Transform attacker, Transform target, NavMeshAgent agent, LayerMask targetMask, MonoBehaviour context)
+    {
+        for (int i = 0; i < chargeRepeats; i++)
+        {
+            float chargeSeriesDelay = 0.5f;
+
+            while(isCharging)
+            {
+                yield return null;
+            }
+
+            context.StartCoroutine(ChargeRoutine(attacker, target, agent, chargeSeriesDelay, targetMask));
+
+            // Optional short pause between charges
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
