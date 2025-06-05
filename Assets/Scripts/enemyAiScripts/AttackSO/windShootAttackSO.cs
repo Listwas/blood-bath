@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.ProBuilder;
 
 [CreateAssetMenu(menuName ="EnemyAttacks/WindProjectileAttack")]
-public class windShootAttackSO : AttackSO
+public class WindShootAttackSO : AttackSO
 {
     [Header("Basic projectile settings")]
     [SerializeField] private float projectileRange = 15f;

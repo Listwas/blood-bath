@@ -6,7 +6,7 @@ using UnityEngine.AI;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 [CreateAssetMenu(menuName = "EnemyAttacks/ChargeAttack")]
-public class ChargeAttackSO : AttackSO
+public class ChargeSeriesAttackSO : AttackSO
 {
     [Header("Charge attack variables")]
     [SerializeField] private float chargeDelay = 1.5f;
@@ -33,7 +33,7 @@ public class ChargeAttackSO : AttackSO
     public override void ExecuteAttack(Transform attacker, Transform target, Transform shootOrigin, LayerMask targetMask, MonoBehaviour context)
     {
         
-        float distanceToPlayer = Vector3.Distance(attacker.position, target.position);
+        //float distanceToPlayer = Vector3.Distance(attacker.position, target.position);
         NavMeshAgent agent = attacker.GetComponent<NavMeshAgent>();
         Debug.Log("ExecuteAttack inside ChargedAttackSO is being called");
 
@@ -52,7 +52,7 @@ public class ChargeAttackSO : AttackSO
     }
 
 
-    private void DisplayChargeIndicatorStatic(Transform attacker, Transform target, Vector3 directionToPlayer, float indicatorDuration)
+    private void DisplayChargeIndicatorStatic(Transform attacker, Vector3 directionToPlayer, float indicatorDuration)
     {
         Renderer renderer = attacker.GetComponentInChildren<Renderer>();
         float width = renderer != null ? renderer.bounds.size.x : 1f;
@@ -89,7 +89,7 @@ public class ChargeAttackSO : AttackSO
         Vector3 chargeDestination = attacker.position + directionToPlayer * chargeMaxDistance;
 
         //Debug.Log("DisplayChargeIndicatorStatic called!");
-        DisplayChargeIndicatorStatic(attacker, target, directionToPlayer, chargeWaitDuration);
+        DisplayChargeIndicatorStatic(attacker, directionToPlayer, chargeWaitDuration);
 
 
         yield return new WaitForSeconds(chargeWaitDuration);
