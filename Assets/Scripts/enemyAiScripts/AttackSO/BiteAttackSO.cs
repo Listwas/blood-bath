@@ -10,11 +10,17 @@ using static UnityEngine.UI.Image;
 [CreateAssetMenu(menuName = "EnemyAttacks/BiteAttack")]
 public class BiteAttackSO : AttackSO
 {
-    [Header("Bite indicator values")]
+    [Header("Bite variables")]
     [SerializeField] private float biteAngle = 60f;
     [SerializeField] private float biteRadius = 2f;
     [SerializeField] private float biteWaitDuration = 1f;
-    [SerializeField] private float biteTriggerRange = 3f;
+    [SerializeField] protected float biteTriggerRange = 3f;
+
+    [Header("Lunge variables")]
+    [SerializeField] private float lungeDistance = 1f;
+    [SerializeField] private float lungeDuration = 0.1f;
+
+    [Header("Bite indicator variables")]
     [SerializeField] private Color indicatorColor = Color.red;
 
     public override float attackRange => biteTriggerRange;
@@ -38,7 +44,7 @@ public class BiteAttackSO : AttackSO
         }
     }
 
-    private IEnumerator BiteRoutine(Transform attacker, Transform target, NavMeshAgent agent, LayerMask targetMask)
+    protected IEnumerator BiteRoutine(Transform attacker, Transform target, NavMeshAgent agent, LayerMask targetMask)
     {
         agent.isStopped = true;
 
@@ -48,6 +54,11 @@ public class BiteAttackSO : AttackSO
         DisplayBiteIndicatorStatic(attacker, target, directionToPlayer);
 
         yield return new WaitForSeconds(biteWaitDuration);
+        
+        if(lungeDistance != 0f)
+        {
+            yield return LungeTowardTarget(attacker, directionToPlayer);
+        }
 
         Collider[] hits = Physics.OverlapSphere(attacker.position, biteRadius, targetMask);
 
@@ -75,6 +86,7 @@ public class BiteAttackSO : AttackSO
         Debug.Log("Figuring out the bite indicator!");
 
         GameObject sector = new GameObject("BiteAttackIndicator");
+        sector.transform.SetParent(attacker.transform);
         sector.transform.position = new Vector3(attacker.position.x, 0.03f, attacker.position.z);
         sector.transform.rotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0f, directionToPlayer.z));
 
@@ -89,7 +101,7 @@ public class BiteAttackSO : AttackSO
         mat.color = indicatorColor;
         mr.material = mat;
 
-        GameObject.Destroy(sector, biteWaitDuration + 0.01f);
+        GameObject.Destroy(sector, biteWaitDuration + 0.2f);
     }
 
     private Mesh GenerateSectorMesh(float biteAngle, float biteRadius, int segments)
@@ -133,4 +145,20 @@ public class BiteAttackSO : AttackSO
         return mesh;
     }
 
+    private IEnumerator LungeTowardTarget(Transform attacker, Vector3 directionToPlayer)
+    {
+        Vector3 startPosition = attacker.position;
+        directionToPlayer.y = 0f;
+        Vector3 endPosition = startPosition + directionToPlayer * lungeDistance;
+
+        float timeElapsed = 0f;
+        while (timeElapsed < lungeDuration)
+        {
+            attacker.position = Vector3.Lerp(startPosition, endPosition, timeElapsed / lungeDuration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        attacker.position = endPosition;
+    }
 }

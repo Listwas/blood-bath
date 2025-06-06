@@ -15,9 +15,10 @@ MonoBehaviour:
   attackName: Bite Attack
   damage: 10
   cooldown: 2
-  isRanged: 0
   biteAngle: 80
   biteRadius: 4
   biteWaitDuration: 1
   biteTriggerRange: 4
+  lungeDistance: 2
+  lungeDuration: 0.15
   indicatorColor: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
