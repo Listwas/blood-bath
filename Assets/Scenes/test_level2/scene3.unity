@@ -2464,7 +2464,7 @@ PrefabInstance:
     - target: {fileID: 2125180669898700007, guid: beaf6545fd5e54b488ce604d82217fda, type: 3}
       propertyPath: attackSOs.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 7945b9cbf40a9fd4383a0d095c43dad0, type: 2}
+      objectReference: {fileID: 11400000, guid: 52cfdc655503cfd43a8f1c811133cdd6, type: 2}
     - target: {fileID: 2125180669898700007, guid: beaf6545fd5e54b488ce604d82217fda, type: 3}
       propertyPath: attackSOs.Array.data[1]
       value: 

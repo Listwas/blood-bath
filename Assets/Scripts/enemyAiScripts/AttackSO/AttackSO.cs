@@ -12,7 +12,7 @@ public abstract class AttackSO : ScriptableObject
 
     public abstract void ExecuteAttack(Transform attacker, Transform target, Transform shootOrigin, LayerMask targetMask, MonoBehaviour context);
 
-    public virtual void DealDamage(Collider hit, Transform attacker)
+    public virtual void DealDamage(Collider hit, Transform attacker, int damage)
     {
         if (hit.gameObject.CompareTag("Player"))
         {

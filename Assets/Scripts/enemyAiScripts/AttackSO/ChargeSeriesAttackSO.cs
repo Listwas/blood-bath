@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
-[CreateAssetMenu(menuName = "EnemyAttacks/ChargeAttack")]
+[CreateAssetMenu(menuName = "Enemy Attacks/Charge Series Attack")]
 public class ChargeSeriesAttackSO : AttackSO
 {
     [Header("Charge attack variables")]
@@ -112,7 +112,7 @@ public class ChargeSeriesAttackSO : AttackSO
             {
                 if(hit.gameObject.CompareTag("Player"))
                 {
-                    DealDamage(hit, attacker);
+                    DealDamage(hit, attacker, damage);
                     break;
                 }
                 Debug.Log("Hit player!");

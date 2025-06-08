@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(menuName =("EnemyAttacks/ThrustSeriesSO"))]
+[CreateAssetMenu(menuName =("Enemy Attacks/Thrust Series Attack"))]
 public class ThrustsAttackSO : AttackSO
 {
     [Header("Thrusts variables")]
@@ -81,7 +81,7 @@ public class ThrustsAttackSO : AttackSO
         {
             if (hit.CompareTag("Player"))
             {
-                DealDamage(hit, attacker);
+                DealDamage(hit, attacker, damage);
                 break;
             }
         }

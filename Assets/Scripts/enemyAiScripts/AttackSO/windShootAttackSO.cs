@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
-[CreateAssetMenu(menuName ="EnemyAttacks/WindProjectileAttack")]
+[CreateAssetMenu(menuName ="Enemy Attacks/Wind Projectile Attack")]
 public class WindShootAttackSO : AttackSO
 {
     [Header("Basic projectile settings")]
