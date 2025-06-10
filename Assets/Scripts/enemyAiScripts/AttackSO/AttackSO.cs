@@ -26,7 +26,11 @@ public abstract class AttackSO : ScriptableObject
                 }
                 else
                 {
-                    playerCombat.TakeDamage(damage, attacker);
+                    if (hit.TryGetComponent<PlayerImmunityAndKnockbackScript>(out var immunityScript))
+                    {
+                        immunityScript.ReceiveHit(damage, attacker);
+                    }
+                    //playerCombat.TakeDamage(damage, attacker);
                 }
             }
         }

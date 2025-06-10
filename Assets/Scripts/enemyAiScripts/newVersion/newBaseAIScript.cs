@@ -77,7 +77,7 @@ public class newBaseAIScript : MonoBehaviour
 
         if (attackSOs.Length != 0 && attackSOs[attackIndex].isRanged == true)
         {
-            Debug.Log("Enemy in RangedMode");
+            //Debug.Log("Enemy in RangedMode");
             HandleStatesRanged(distanceToPlayer, newAttackRange);
         }
         else
@@ -87,7 +87,7 @@ public class newBaseAIScript : MonoBehaviour
         }
         if(attackCooldownTimer > 0f)
         {
-            Debug.Log("attackCooldownTimer decreased. Current value: " + attackCooldownTimer);
+            //Debug.Log("attackCooldownTimer decreased. Current value: " + attackCooldownTimer);
             attackCooldownTimer -= Time.deltaTime;
         }
 
@@ -155,7 +155,7 @@ public class newBaseAIScript : MonoBehaviour
         NavMeshHit hit;
         if (NavMesh.SamplePosition(fleeTarget, out hit, 2f, NavMesh.AllAreas))
         {
-            Debug.Log("enemy flees");
+            //Debug.Log("enemy flees");
             agent.SetDestination(hit.position);
         }
     }
@@ -220,7 +220,7 @@ public class newBaseAIScript : MonoBehaviour
             {
                 Debug.Log("DoAttack called!");
                 DoAttack(attackIndex);
-                Debug.Log("Right after DoAttack called!");
+                //Debug.Log("Right after DoAttack called!");
                 attackIndex++;
 
                 if (attackIndex >= attackSOs.Length)
@@ -267,7 +267,7 @@ public class newBaseAIScript : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-        Debug.Log("walk point selected:" + walkPoint);
+        //Debug.Log("walk point selected:" + walkPoint);
 
         //check if its in boundaries of NavMeshSurface (i think)
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask))
@@ -296,7 +296,7 @@ public class newBaseAIScript : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void EnemyTakeDamage(int damage)
     {
         currentHealth -= damage;
         Debug.Log("enemy took " + damage + " damage. Current health: " + currentHealth);

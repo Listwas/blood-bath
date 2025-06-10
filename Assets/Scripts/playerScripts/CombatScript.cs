@@ -197,7 +197,7 @@ public class CombatScript : MonoBehaviour
                 newBaseAIScript newbaseAIScript = enemy.GetComponent<newBaseAIScript>();
                 if (newbaseAIScript != null)
                 {
-                    newbaseAIScript.TakeDamage(damage);
+                    newbaseAIScript.EnemyTakeDamage(damage);
                 }
             }
             return true;
