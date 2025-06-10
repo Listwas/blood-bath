@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 6641049533637881361}
   - component: {fileID: 2125180669898700007}
   m_Layer: 3
-  m_Name: New Enemy Version
+  m_Name: Kornik-wojownik
   m_TagString: soldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74273997ef6d48847ac95505c630e808, type: 2}
+  - {fileID: 2100000, guid: 48bfe4b6b4a8f714dbb2075ab4b71bd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -494,7 +494,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repositionRadius: 5
   repositionSampleCount: 12
-  attackSOs: []
+  attackSOs:
+  - {fileID: 11400000, guid: 6fa1f9581a320c440a1e828d15b9b7c9, type: 2}
+  - {fileID: 11400000, guid: a4515a036c88b384b8a3dd5edfc4912f, type: 2}
   attackingPatters: 1
   groundMask:
     serializedVersion: 2

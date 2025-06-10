@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 6641049533637881361}
   - component: {fileID: 2125180669898700007}
   m_Layer: 3
-  m_Name: New Enemy Version
+  m_Name: Korniki-chmara
   m_TagString: soldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74273997ef6d48847ac95505c630e808, type: 2}
+  - {fileID: 2100000, guid: 663bdcfe0b0527c4ba7c201d1abc9359, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -494,7 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repositionRadius: 5
   repositionSampleCount: 12
-  attackSOs: []
+  attackSOs:
+  - {fileID: 11400000, guid: ecaf2b3b8226941408927d925fec2f27, type: 2}
   attackingPatters: 1
   groundMask:
     serializedVersion: 2

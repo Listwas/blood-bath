@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 6641049533637881361}
   - component: {fileID: 2125180669898700007}
   m_Layer: 3
-  m_Name: New Enemy Version
+  m_Name: Pasikomar
   m_TagString: soldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74273997ef6d48847ac95505c630e808, type: 2}
+  - {fileID: 2100000, guid: 1d72c5d072c4bd64fae56ee6dd57bfd9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -494,7 +494,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repositionRadius: 5
   repositionSampleCount: 12
-  attackSOs: []
+  attackSOs:
+  - {fileID: 11400000, guid: 2b764b0bb3d2b7047815fa88503ad686, type: 2}
+  - {fileID: 11400000, guid: 0c9532af94bd36b458c4b6fd8fbc1937, type: 2}
+  - {fileID: 11400000, guid: a593d9a3f8c120f45aab8ae84824da6c, type: 2}
+  - {fileID: 11400000, guid: aaa13bc5099662a4d8563cc50652412c, type: 2}
   attackingPatters: 1
   groundMask:
     serializedVersion: 2
