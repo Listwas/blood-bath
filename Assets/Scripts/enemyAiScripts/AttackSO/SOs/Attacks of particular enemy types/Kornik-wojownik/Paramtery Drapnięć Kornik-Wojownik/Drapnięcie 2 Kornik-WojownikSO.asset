@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c413f1f9cdc78c048a4112821e6ad380, type: 3}
   m_Name: "Drapni\u0119cie 2 Kornik-WojownikSO"
   m_EditorClassIdentifier: 
-  damage: 10
-  angle: 60
-  radius: 2
+  damage: 20
+  angle: 100
+  radius: 3.5
   lungeDistance: 0
   lungeDuration: 0.1

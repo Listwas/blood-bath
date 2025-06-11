@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a7ea9f19d57d014c991f8176cdf65aa, type: 3}
-  m_Name: ThrustsSeriesSO
+  m_Name: TestThrustsSeriesSO
   m_EditorClassIdentifier: 
   attackName: ThrustSeriesSO
   damage: 10
-  cooldown: 5
-  thrustsRepeats: 3
+  cooldown: 3
+  thrustsRepeats: 6
   thrustsInitialDelay: 0.5
   thrustsMidDelay: 0.25
   thrustsHitboxSize: {x: 1.25, y: 0.5, z: 3}

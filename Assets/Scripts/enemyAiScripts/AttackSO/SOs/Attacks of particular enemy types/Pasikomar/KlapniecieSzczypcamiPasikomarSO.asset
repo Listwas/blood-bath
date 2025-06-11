@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a05b3e29566df044adae5a1a58e0906, type: 3}
   m_Name: KlapniecieSzczypcamiPasikomarSO
   m_EditorClassIdentifier: 
-  attackName: 
-  damage: 0
-  cooldown: 0
-  biteAngle: 60
-  biteRadius: 2
-  biteWaitDuration: 1
+  attackName: "K\u0142apni\u0119cie Szczypcami Pasikomar"
+  damage: 20
+  cooldown: 3
+  biteAngle: 120
+  biteRadius: 3
+  biteWaitDuration: 0.75
   biteTriggerRange: 3
-  lungeDistance: 1
+  lungeDistance: 0
   lungeDuration: 0.1
-  indicatorColor: {r: 1, g: 0, b: 0, a: 1}
+  indicatorColor: {r: 1, g: 0.5424528, b: 0.5424528, a: 1}

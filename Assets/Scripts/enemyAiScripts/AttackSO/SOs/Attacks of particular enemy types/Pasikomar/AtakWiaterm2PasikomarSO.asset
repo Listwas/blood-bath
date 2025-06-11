@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea9ef6f031cc73488220cd80f244b01, type: 3}
   m_Name: AtakWiaterm2PasikomarSO
   m_EditorClassIdentifier: 
-  attackName: 
-  damage: 0
-  cooldown: 0
+  attackName: Ata k Wiatrem 2 Pasikomar
+  damage: 15
+  cooldown: 3
   projectileRange: 15
-  projectileSpeed: 10
-  bulletPrefab: {fileID: 0}
+  projectileSpeed: 20
+  bulletPrefab: {fileID: 4916089195403221864, guid: 37cf9223d8524674584db3a3da5614da, type: 3}
   sinusoidFrequency: 5
   sinusoidAmplitude: 0.5
   projectilePathType: 0

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f04282adbfa6f449278b39561b3cdb, type: 3}
   m_Name: "Szar\u017CaKornikiChmaraSO"
   m_EditorClassIdentifier: 
-  attackName: 
-  damage: 0
-  cooldown: 0
+  attackName: "Szar\u017Ca Korniki Chmara"
+  damage: 20
+  cooldown: 3
   chargeDelay: 1.5
-  chargeSpeed: 10
+  chargeSpeed: 30
   chargeMaxDistance: 10
   chargeRepeats: 1
-  indicatorColor: {r: 1, g: 0, b: 0, a: 1}
+  indicatorColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
   hitboxSize: {x: 1, y: 2, z: 1}

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a05b3e29566df044adae5a1a58e0906, type: 3}
   m_Name: UgryzienieKornikWojownikSO
   m_EditorClassIdentifier: 
-  attackName: 
-  damage: 0
-  cooldown: 0
-  biteAngle: 60
-  biteRadius: 2
-  biteWaitDuration: 1
-  biteTriggerRange: 3
+  attackName: Ugryzienie Kornik Wojownik
+  damage: 15
+  cooldown: 3
+  biteAngle: 70
+  biteRadius: 5
+  biteWaitDuration: 0.75
+  biteTriggerRange: 5.5
   lungeDistance: 1
   lungeDuration: 0.1
-  indicatorColor: {r: 1, g: 0, b: 0, a: 1}
+  indicatorColor: {r: 1, g: 0.5518868, b: 0.5518868, a: 1}

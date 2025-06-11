@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c413f1f9cdc78c048a4112821e6ad380, type: 3}
   m_Name: Scratch 2
   m_EditorClassIdentifier: 
-  damage: 20
-  angle: 45
+  damage: 70
+  angle: 120
   radius: 4
-  lungeDistance: 2
+  lungeDistance: 0
   lungeDuration: 0.1
