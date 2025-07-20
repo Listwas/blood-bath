@@ -23,7 +23,9 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             rigid_body = GetComponent<Rigidbody>();
         }
-
+        character_controller = GetComponent<CharacterController>();
+        GameObject camera_object = GameObject.FindGameObjectWithTag("Camera");
+        camera_transform = camera_object.transform;
         current_health = max_health;
         combatScript = GetComponent<CombatScript>();
     }
