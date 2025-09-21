@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class newBaseAIScript : MonoBehaviour
 {
+    [Header("Immunity and Knockback parameters")]
+    [SerializeField] private float immunityDuration;
+    [SerializeField] private float knockbackDuration = 0.15f; 
+    private Coroutine knockbackRoutine;
+
+
     [Header("Moved form RangedEnemyAIScript")]
     public float repositionRadius = 5f;
     public int repositionSampleCount = 12;
@@ -294,6 +301,39 @@ public class newBaseAIScript : MonoBehaviour
         {
             return 2f;
         }
+    }
+
+    public void EnemyReceiveHit(int damage)
+    {
+
+        EnemyTakeDamage(damage); // You can replace this with your enemy-specific logic
+
+        if (knockbackRoutine != null)
+            StopCoroutine(knockbackRoutine);
+
+        float knockbackDistance = damage * 0.15f;
+        knockbackRoutine = StartCoroutine(KnockbackFrom(player.position, knockbackDistance));
+    }
+
+    private IEnumerator KnockbackFrom(Vector3 sourcePosition, float knockbackDistance)
+    {
+        Vector3 direction = (transform.position - sourcePosition).normalized;
+        direction.y = 0f;
+
+        Vector3 start = transform.position;
+        Vector3 end = start + direction * knockbackDistance;
+
+        float elapsed = 0f;
+
+        while (elapsed < knockbackDuration)
+        {
+            float t = elapsed / knockbackDuration;
+            transform.position = Vector3.Lerp(start, end, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = end;
     }
 
     public void EnemyTakeDamage(int damage)
