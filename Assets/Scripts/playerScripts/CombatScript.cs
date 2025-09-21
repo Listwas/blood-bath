@@ -192,7 +192,12 @@ public class CombatScript : MonoBehaviour
                 EnemyScript enemyScript = enemy.GetComponent<EnemyScript>();
                 if (enemyScript != null)
                 {
-                    enemyScript.TakeDamage(damage);
+                    //enemyScript.TakeDamage(damage);
+                }                                                                   //added to check if new enemy AI works well with combat script
+                newBaseAIScript newbaseAIScript = enemy.GetComponent<newBaseAIScript>();
+                if (newbaseAIScript != null)
+                {
+                    newbaseAIScript.EnemyReceiveHit(damage);
                 }
             }
             return true;

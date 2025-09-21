@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea9ef6f031cc73488220cd80f244b01, type: 3}
+  m_Name: AtakWiatremPasikomarSO
+  m_EditorClassIdentifier: 
+  attackName: Atak Wiatrem Pasikomar
+  damage: 15
+  cooldown: 3
+  projectileRange: 15
+  projectileSpeed: 10
+  bulletPrefab: {fileID: 4916089195403221864, guid: 37cf9223d8524674584db3a3da5614da, type: 3}
+  sinusoidFrequency: 20
+  sinusoidAmplitude: 3
+  projectilePathType: 2

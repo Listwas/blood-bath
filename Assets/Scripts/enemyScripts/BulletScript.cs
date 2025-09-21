@@ -22,7 +22,11 @@ public class BulletScript : MonoBehaviour
                     Destroy(gameObject);
                     return;
                 }
-                playerCombat.TakeDamage(bulletDamage, attacker); 
+                if (other.TryGetComponent<PlayerImmunityAndKnockbackScript>(out var immunityScript))
+                {
+                    immunityScript.ReceiveHit(bulletDamage, attacker);
+                }
+                //playerCombat.TakeDamage(bulletDamage, attacker); 
             }
             Destroy(gameObject);
         } else if (other.gameObject.CompareTag("Obstacle")) {

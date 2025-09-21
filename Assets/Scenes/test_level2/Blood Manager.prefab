@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8594729e35818a247820c9ddac9c6545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 0}
+  bloodPrefab: {fileID: 6093939219246838934, guid: dd772c46ed10a525b9f67f3001bcb475, type: 3}
   bloodDropChance: 100
   bloodDestructionTime: 20
 --- !u!114 &1150163600540966084
@@ -63,8 +63,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBloodPoints: 0
   addBloodPoints: 5
+  DMGMulti: 1
+  bloodOnScreenNum: 0
   bloodPointsFearMode: 50
   fearModeTime: 10
+  resetDMGMulti: 4
+  resetBloodPoints: 100
 --- !u!114 &5622413267463780921
 MonoBehaviour:
   m_ObjectHideFlags: 0
